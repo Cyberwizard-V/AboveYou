@@ -21,7 +21,7 @@ def main():
             functions.typeSys(f"""You have obtained a Item {x[x.index(userChoose)]}""", 0.01)
             print(x)
         else:
-            print("Bruh stupid? DEAD")
+            print("Bruh stupid?")
             break
 
 
