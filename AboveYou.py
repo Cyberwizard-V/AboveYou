@@ -2,21 +2,25 @@ import functions
 import time
 
 def main():
-    mainscreen = False
-    gamestart = True
-    x = []
+    mainscreen = True
+    gamestart = False
+    gameInventory = []
     while mainscreen:
+        functions.playSound("music/minecraftmusic.wav", 1)
         functions.clearConsole()
-        time.sleep(2)
         functions.intro()
         time.sleep(2)
         break
     gamestart = True
+
     while gamestart:
-        if functions.chooseSys("Egel", "bom", "bom", "bom") == "Egel":
+        y = functions.chooseSys("Egel", "bom", "bom", "checkitems")
+        if y == "Egel":
             userChoose = "Egel"
-            x.append(userChoose)
-            functions.typeSys(f"""You have obtained a Item {x[x.index(userChoose)]}""", 0.01)
+            gameInventory.append(userChoose)
+            functions.typeSys(f"""\nYou have obtained a Item {gameInventory[gameInventory.index(userChoose)]}""", 0.01)
+        elif y == "checkitems":
+            print(gameInventory)
         else:
             print("Bruh stupid?")
             break
@@ -25,4 +29,6 @@ def main():
 
 
 main()
+
+#print(functions.chooseSys("Egel", "bom", "bom", "checkitems"))
 
