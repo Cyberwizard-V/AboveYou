@@ -6,10 +6,10 @@ def main():
     gamestart = False
     gameInventory = []
     while mainscreen:
-        functions.playSound("music/minecraftmusic.wav", 1)
+        functions.playSound("music/minecraftmusic.mp3", 1)
         functions.clearConsole()
         functions.intro()
-        time.sleep(2)
+        time.sleep(5)
         break
     gamestart = True
 
@@ -23,12 +23,7 @@ def main():
             print(gameInventory)
         else:
             print("Bruh stupid?")
-            break
-
-
-
-
+        
 main()
 
-#print(functions.chooseSys("Egel", "bom", "bom", "checkitems"))
 
