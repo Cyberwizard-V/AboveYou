@@ -43,10 +43,12 @@ def chooseSys(Op1, Op2, Op3, Op4):
          print("Not an option loser")
 
 def typeSys(xWords, time):
+    print(f"\n###############################\n")
     for char in xWords:
         sleep(time)
         sys.stdout.write(char)
         sys.stdout.flush()
+    print(f"\n###############################\n")
 
 
 
