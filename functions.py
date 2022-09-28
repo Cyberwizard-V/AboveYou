@@ -37,23 +37,71 @@ def clearConsole():
     os.system(command)
 
 
-def chooseSys(Op1, Op2, Op3, Op4, Op5q):
-    Options = [Op1,Op2,Op3,Op4,Op5q]
-    print("\nPlease choose your options;")
-    print(f"1 {Options[0]}: , 2 {Options[1]}: 3 {Options[2]}:, 4 {Options[3]}: 5 {Options[4]}:" )
+def chooseSys(Op1, Op2, Op3, Op4, Op5q, mainOptions = "Main"):
+
+    Options = [Op1, Op2, Op3, Op4, Op5q]
+    mainOptions = ["Inventory", "Map", "Quit"]
+
+    print(f"1 {Options[0]}: , 2 {Options[1]}: 3 {Options[2]}:, 4 {Options[3]}: 5 {Options[4]}")
+    
     try: 
      z = int(input("Choose : "))
      if z == 1 or z == 2 or z == 3 or z == 4 or z == 5:
         text = Options[(z-1)]
+     elif z == 6:
+        x = int(input("Choose : "))
+        if x == 1 or x == 2 or x == 3:
+            text = mainOptions[(x-1)]
+            print(text)
+        if x == 1:
+            print(AboveYou.gameInventory)
+        elif x == 2:
+            print(gameMap(0))
+        else:
+            quit()
         return text
     except:
          print("Not an option loser")
+        
 
 def typeSys(xWords, time):
     for char in xWords:
         sleep(time)
         sys.stdout.write(char)
         sys.stdout.flush()
+
+def gameMap(location):
+    maps = [f"""    #######    /##################################################### #####                                                                    
+########                                                            
+    (#                                                                               #/                                                            
+    (#                                                                               #/                                                            
+    ##                                                                               ##                                                            
+    ##                                                                               ##                                                            
+##/                                                                               (##                                                           
+##                                                                                 ##                                                           
+##                                                                                 ##                                                           
+##                                      /                                          ##                                                           
+##                                    ,*///                                        ##                                                           
+##                                    ///////                                      ##                                                           
+##                                    ////////                                     ##                                                           
+##                                    /////////                                    ##                                                           
+##                /,                /*/////////*/                                  ##                                                           
+##/               //                //////////////                                /##                                                           
+###              ///               ///////////////*/     ///                      ###                                                           
+###            .////               /////***//////////   ////*                     ###                                                           
+###           ./////   //////     //////****//////////  /////                     ###                                                           
+###           //////  ////////// //////******.////////////////                    ###                                                           
+*##         ///////////////////////////******,,///////////////,/   ,/       /.    ##*                                                           
+*#/       .///////////////////////////*********////////////////// ////     ///    (#,                                                           
+    #.      /*//////**//////////////////*************/***/////////////////.  ////*/   #                                                            
+    ##    /,////////***//////*////////*******************,*//*******//////////////*/ ##                                                            
+    ##  /*////////******,///,**/,****,*****************************************//////##                                                            
+    (# //////////********,,.***************************************************.*/////#                                                            
+    *##(##********************************************************************#*##(/                                                            
+            ,   *#*******************************************************(######.                                                                  
+                    ,(#########################################(/.                  """,  f""" map 2"""]
+    print(maps[location])
+
 
 def playSound(soundPath, volume = 0.01):
     #Instantiate mixer
