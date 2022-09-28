@@ -12,7 +12,7 @@ def intro():
     /(__)\  ) _ < )(_)(  \  /  )__)    \  /  )(_)(  )(__)( 
    (__)(__)(____/(_____)  \/  (____)   (__) (_____)(______)""", 0.001)
 
-    playerName = input("Please input your name : ")
+    playerName = input("\nPlease input your name : ")
     if playerName.isalpha():
         clearConsole()
         typeSys(f"Welcome to the game {playerName}", 0.01)
