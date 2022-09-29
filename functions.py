@@ -6,7 +6,7 @@ from pygame import mixer
 
 
 gameInventory = []
-playerStats = [0]
+playerStats = [0, 0]
 hitpoints = 3
 
 
@@ -50,12 +50,13 @@ def clearConsoleEnt():
         command = 'cls'
     os.system(command)
 
-def chooseSys(Op1, Op2, Op3, Op4, Menu = "Menu", Back = "Back"):
+
+def chooseSys(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Me", Back="Back" ):
 
     Options = [Op1, Op2, Op3, Op4, Menu, Back]
 
     print(f"""                      
-\033[1mChoices \033[0m                   
+\033[1m{Choices} \033[0m                   
  \033[1m─────────────────────────     \033[0m               
 \033[1m\033[95m1\033[0m {Options[0]}\t\t     \033[0m     
 \033[1m\033[96m2\033[0m {Options[1]}\t\t    \033[0m      
@@ -80,7 +81,7 @@ def menu(Op1 = "Inventory", Op2 = "playerStatus",Op3 = "Map", op4 = "Back"):
     menuOptions = [Op1, Op2, Op3, op4]
     while True:
         print(f"""\n
-Menu    |Health: {hitpoints}
+Me    |Health: {hitpoints}
 ──────────────────
 \033[95m1\033[0m {menuOptions[0]}
 \033[96m2\033[0m {menuOptions[1]} 
@@ -91,28 +92,43 @@ Menu    |Health: {hitpoints}
         z = input("Type the option you want: ").lower()
         if z == "inventory" or z == "1":
             clearConsole()
-            print(f"""
+            while True:
+                print(f"""
 Inventory
 ──────────────────""")
-            while True:
                 print(f"{gameInventory}")
-                inventoryCheck = input("Type the item you'd like to inspect or enter q to quit inventory: ").lower()
+                inventoryCheck = input("Type the item name you'd like to inspect or enter q to quit inventory: ").lower()
                 if inventoryCheck == "q":
                         break
                 if inventoryCheck in gameInventory:
-                    if inventoryCheck == "jar of milk":
-                        inputInventory = input("The jar of milk seems to be glowing bright, would you like to drink it? (Y/N) ").lower()
+                    if inventoryCheck == "adoption papers":
+                        print("It is a picture of me in the adoption papers!\n")
+                        print("You become sad.")
+                        gameInventory.remove("adoption papers")
+                        print("\nYou discard the adoption papers")
+                        playerStats[1] += 1
+                    elif inventoryCheck == "car keys":
+                        print("I wish I had a car")
+                        clearConsoleEnt()
+                    elif inventoryCheck == "picture of your mom":
+                        print("She looks oddly familiar...")
+                        clearConsoleEnt()
+                    elif inventoryCheck == "jar of milk":
+                        inputInventory = input("\nThe jar of milk seems to be glowing bright, would you like to drink it? (Y/N) ").lower()
+                        clearConsoleEnt()
                         if inputInventory == "y":
                             gameInventory.remove("jar of milk")
                             playerStats[0] += 1
-                            print("You feel the power of the milk flowing through your bloodstream. You have gained fire resistance")
-                            print("jar of milk has been removed from your inventory")
+                            print("You feel the power of the milk flowing through your bloodstream. You have gained fire resistance\n")
+                            print("\033[93mjar of milk has been removed from your inventory\033[0m")
+                            clearConsoleEnt()
                         elif inputInventory == "n":
                             continue
                         else:
                             print("L bozo, this is not a valid input")
-                CQuit = input("Do you want to look into another option? (Y/N) ").lower()
+                CQuit = input("Do you want continue looking in your inventory? (Y/N) ").lower()
                 if CQuit == "y":
+                    clearConsole()
                     continue
                 else:
                     break
@@ -122,6 +138,11 @@ Inventory
 Status effects
 ──────────────────
 """)
+            if playerStats[0] == 1:
+                print("Fire resistance")
+            if playerStats[1] == 1:
+                print("Sad")
+
             clearConsoleEnt()
         elif z == "map" or z == "3":
             clearConsole()
@@ -129,6 +150,7 @@ Status effects
             clearConsoleEnt()
             continue
         elif z == "back" or z == "4":
+            clearConsole()
             break
         else:
             print("Not a valid option")
