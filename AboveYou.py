@@ -59,7 +59,7 @@ You look if there is anything to salvage, from his belongings: \n""", 0.001)
                     functions.clearConsole()
                     print("Choose a item to inspect or pickup:")
                     print("#"* 100)
-                    y1 = functions.chooseSys("jar of milk", "addoption papers", "car keys", "picture of your mom", "Intestines")
+                    y1 = functions.chooseSys("jar of milk", "adoption papers", "car keys", "picture of your mom", "Intestines")
                     if y1 == "jar of milk":
                         optionsC[0] += 1
                         if optionsC[0] > 1:
@@ -71,7 +71,7 @@ You look if there is anything to salvage, from his belongings: \n""", 0.001)
                         optionsC[1] += 1
                         if optionsC[1] > 1:
                             print("You already picked this item up.")
-                        gameInventory.append("addoption papers")
+                        gameInventory.append("adoption papers")
                         functions.typeSys(f"""You have obtained a Item {gameInventory[gameInventory.index(y1)]}\n""", 0.01)
                     if y1 == "car keys":
                         optionsC[2] += 1
