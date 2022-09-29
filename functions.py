@@ -209,3 +209,4 @@ def playSound(soundPath, volume = 0.01):
 
 
 
+# hidden status effect, gameplay chaanges based on actions. 
