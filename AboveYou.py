@@ -8,7 +8,7 @@ def main():
     hitpoints = 3
 
     while mainscreen:
-        #functions.playSound("music/minecraftmusic.mp3", 1)
+        functions.playSound("music/minecraftmusic.mp3", 1)
         functions.clearConsole()
         functions.intro()
         time.sleep(5)
@@ -16,15 +16,15 @@ def main():
     stageHell = True
 
     while stageHell:
-#         functions.typeSys(f"""Warmth is flowing into your body again. 
-# You open your eyes. Everything you see is engulfed in flames.
-# It is crimson red and fire seems to be burning eternally. 
-# It could be a thousand degrees in here. 
-# Suddenly the stench of burning body’s and sulphur is rushing into your nose. 
-# I need to find a way out of here. 
-# You decide to wander around and look for hints to escape this place.""", 0.001)
-#         time.sleep(1)
-#         functions.clearConsole()
+        functions.typeSys(f"""Warmth is flowing into your body again. 
+You open your eyes. Everything you see is engulfed in flames.
+It is crimson red and fire seems to be burning eternally. 
+It could be a thousand degrees in here. 
+Suddenly the stench of burning body’s and sulphur is rushing into your nose. 
+I need to find a way out of here. 
+You decide to wander around and look for hints to escape this place.""", 0.001)
+        time.sleep(1)
+        functions.clearConsole()
 
         functions.typeSys(f"""It is almost unbearable to walk around properly, due to the temperature.
 I should look for something, which can help me against the heat.""", 0.001)
