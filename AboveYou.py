@@ -24,6 +24,7 @@ Suddenly the stench of burning body’s and sulphur is rushing into your nose.
 I need to find a way out of here. 
 You decide to wander around and look for hints to escape this place.""", 0.001)
         time.sleep(1)
+
         functions.clearConsole()
 
         functions.typeSys(f"""It is almost unbearable to walk around properly, due to the temperature.

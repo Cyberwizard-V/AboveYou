@@ -48,17 +48,6 @@ def chooseSys(Op1, Op2, Op3, Op4, Op5q, mainOptions = "Main"):
      z = int(input("Choose : "))
      if z == 1 or z == 2 or z == 3 or z == 4 or z == 5:
         text = Options[(z-1)]
-     elif z == 6:
-        x = int(input("Choose : "))
-        if x == 1 or x == 2 or x == 3:
-            text = mainOptions[(x-1)]
-            print(text)
-        if x == 1:
-            print(AboveYou.gameInventory)
-        elif x == 2:
-            print(gameMap(0))
-        else:
-            quit()
         return text
     except:
          print("Not an option loser")
