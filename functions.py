@@ -22,11 +22,11 @@ def intro():
         clearConsole()
         typeSys(f"\nWelcome to the game {playerName}", 0.01)
         typeSys(f"""\n  
-        You suddenly feel a warm feeling in your back and collapse to the floor. 
-        Your view is getting hazy and slowly fading away. The only thing you see before the last lights 
-        go out is a silhouette of a person running away. A million questions rush into your head. 
-        Who is this person? Why me? Why is the floor so floory? Right before you die you swore to find out who killed you. """, 0.001)
-        time.sleep(5)
+You suddenly feel a warm feeling in your back and collapse to the floor. 
+Your view is getting hazy and slowly fading away. The only thing you see before the last lights 
+go out is a silhouette of a person running away. A million questions rush into your head. 
+Who is this person? Why me? Why is the floor so floory? Right before you die you swore to find out who killed you. \n\n""", 0.001)
+        input("Press enter to continue...")
         clearConsole()
     else:
         print("Invalid name; please use characters only!")
@@ -42,15 +42,32 @@ def clearConsole():
     os.system(command)
 
 
+def clearConsoleEnt():
+    input("\nPress enter to continue...")
+    command = 'clear'
+    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    os.system(command)
+
 def chooseSys(Op1, Op2, Op3, Op4, Menu = "Menu", Back = "Back"):
 
     Options = [Op1, Op2, Op3, Op4, Menu, Back]
 
-    print(
-        f"1 {Options[0]}: , 2 {Options[1]}: 3 {Options[2]}:, 4 {Options[3]}:, 5 {Options[4]} 6 {Options[5]}")
+    print(f"""                      
+\033[1mChoices \033[0m                   
+ \033[1m─────────────────────────     \033[0m               
+\033[1m\033[95m1\033[0m {Options[0]}\t\t     \033[0m     
+\033[1m\033[96m2\033[0m {Options[1]}\t\t    \033[0m      
+\033[1m\033[93m3\033[0m {Options[2]}\t\t   \033[0m               
+\033[1m\033[91m4\033[0m {Options[3]}\t\t\033[0m
+ \033[1m─────────────────────────\n\033[0m
+\033[1m5 {Options[4]}\t\t    6 {Options[5]} \033[0m
+ \033[1m─────────────────────────\n\033[0m
+
+ """, )
     
     try: 
-     z = int(input("Choose : "))
+     z = int(input("Enter a number you'd like to choose: "))
      if z == 1 or z == 2 or z == 3 or z == 4 or z == 5 or z == 6:
         text = Options[(z-1)]
         return text
@@ -74,6 +91,7 @@ def menu(Op1 = "Inventory", Op2 = "Map", op3 = "Back"):
                         inputInventory = input("The jar of milk seems to be glowing bright, would you like to drink it? (Y/N) ").lower()
                         if inputInventory == "y":
                             gameInventory.remove("jar of milk")
+                            playerStats[0] += 1
                             print("You feel the power of the milk flowing through your bloodstream. You have gained fire resistance")
                             print("jar of milk has been removed from your inventory")
                         elif inputInventory == "n":
@@ -94,7 +112,7 @@ def menu(Op1 = "Inventory", Op2 = "Map", op3 = "Back"):
 
         
 
-def typeSys(xWords, time = 0.01):
+def typeSys(xWords, time = 0.0):
     for char in xWords:
         sleep(time)
         sys.stdout.write(char)
