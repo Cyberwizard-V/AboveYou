@@ -4,8 +4,8 @@ from functions import *
 #\033[93m acitons happening
 
 def main():
-    mainscreen = False
-    stageHell = True
+    mainscreen = True
+    stageHell = False
     hints = 0
     while mainscreen:
         functions.playSound("music/minecraftmusic.mp3", 1)
