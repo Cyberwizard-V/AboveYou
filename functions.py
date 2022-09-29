@@ -7,6 +7,7 @@ from pygame import mixer
 
 gameInventory = []
 playerStats = [0]
+hitpoints = 3
 
 
 
@@ -74,13 +75,25 @@ def chooseSys(Op1, Op2, Op3, Op4, Menu = "Menu", Back = "Back"):
     except:
          print("Not an option loser")
 
-def menu(Op1 = "Inventory", Op2 = "Map", op3 = "Back"):
+def menu(Op1 = "Inventory", Op2 = "playerStatus",Op3 = "Map", op4 = "Back"):
 
-    menuOptions = [Op1, Op2, op3]
+    menuOptions = [Op1, Op2, Op3, op4]
     while True:
-        print(f"{menuOptions[0]}, {menuOptions[1]}, {menuOptions[2]}")
+        print(f"""\n
+Menu    |Health: {hitpoints}
+──────────────────
+\033[95m1\033[0m {menuOptions[0]}
+\033[96m2\033[0m {menuOptions[1]} 
+\033[93m3\033[0m {menuOptions[2]}
+──────────────────
+\033[1m4\033[0m {menuOptions[3]}\n
+""")
         z = input("Type the option you want: ").lower()
-        if z == "inventory":
+        if z == "inventory" or z == "1":
+            clearConsole()
+            print(f"""
+Inventory
+──────────────────""")
             while True:
                 print(f"{gameInventory}")
                 inventoryCheck = input("Type the item you'd like to inspect or enter q to quit inventory: ").lower()
@@ -103,9 +116,19 @@ def menu(Op1 = "Inventory", Op2 = "Map", op3 = "Back"):
                     continue
                 else:
                     break
-        elif z == "map":
-            print(f"You havent found a map yet")
-        elif z == "back":
+        elif z == "status effect" or z == "2":
+            clearConsole()
+            print(f"""
+Status effects
+──────────────────
+""")
+            clearConsoleEnt()
+        elif z == "map" or z == "3":
+            clearConsole()
+            print(f"\nYou havent found a map yet\n")
+            clearConsoleEnt()
+            continue
+        elif z == "back" or z == "4":
             break
         else:
             print("Not a valid option")

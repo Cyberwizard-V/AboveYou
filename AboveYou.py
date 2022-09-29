@@ -5,7 +5,6 @@ from functions import *
 def main():
     mainscreen = True
     stageHell = False
-    hitpoints = 3
     hints = 0
     while mainscreen:
         functions.playSound("music/minecraftmusic.mp3", 1)
@@ -16,26 +15,25 @@ def main():
 
     while stageHell:
         functions.typeSys(f"""Warmth is flowing into your body again. 
-You open your eyes. Everything you see is engulfed in flames.
-It is crimson red and fire seems to be burning eternally. 
-It could be a thousand degrees in here. 
-Suddenly the stench of burning body’s and sulphur is rushing into your nose. 
+You open your eyes. It is crimson red and fire seems to be burning eternally. 
+Everything you see is engulfed in flames, it could be a thousand degrees in here. 
+The stench of burning body’s and sulphur is rushing into your nose. 
 I need to find a way out of here. 
 You decide to wander around and look for hints to escape this place.\n\n""", 0.001)
         input("Press enter to continue...")
 
         functions.clearConsole()
 
-        functions.typeSys(f"""It is almost unbearable to walk around properly, due to the temperature.
+        functions.typeSys(f"""It is unbearable to properly walk around, due to the temperature.
 I should look for something, which can help me against the heat.\n\n""", 0.001)
         input("Press enter to continue...")
         functions.clearConsole()
 
-        functions.typeSys(f"""You look around, and see\n\n""", 0.001)
         options = [0, 0 ,0, 0, 0]
         optionsC = [0, 0 ,0, 0, 0]
         environmentHell = True
         while environmentHell:
+            functions.typeSys(f"""You look around, and see\n\n""", 0.001)
             y = functions.chooseSys("sussy chest", "a corpse", "mix tapes", "large door")
             if y == "sussy chest":
                 options[0] += 1
@@ -44,10 +42,10 @@ I should look for something, which can help me against the heat.\n\n""", 0.001)
                     functions.clearConsoleEnt()
                 else:
                     functions.typeSys(f"""You attempt to inspect the sussy chest, the chest starts to smile and show its teeth when you get closer.
-Its too late to jump out of the way, you get bitten by the chest. Just like Darksouls.""", 0.001)
-                    functions.typeSys("You lost 1 hp")
-                    hitpoints -= 1
-                    functions.typeSys(f"Your current hp is {hitpoints} hp")
+Its too late to jump out of the way, you get bitten by the chest. Just like Darksouls.\n\n""", 0.001)
+                    functions.typeSys("You lost 1 \033[91mhp\033[0m\n")
+                    functions.hitpoints -= 1
+                    functions.typeSys(f"current \033[91mhp\033[0m: {functions.hitpoints}\n\n")
                     functions.clearConsoleEnt()
             elif y == "Back":
                 functions.typeSys("You can't go back here.")
@@ -119,14 +117,14 @@ You look if there is anything to salvage, from his belongings: \n\n""", 0.001)
                             functions.typeSys(f"""You have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n""", 0.01)
                             functions.clearConsoleEnt()
                     elif y1 == "Menu":
-                            functions.menu("Inventory", "Map")
+                        functions.menu("Inventory", "Status effects", "Map")
                     elif y1 == "Back":
                         break
                     else:
                         functions.typeSys("Not a valid option")
                         
             elif y == "Menu":
-                    functions.menu("Inventory", "Map")
+                functions.menu("Inventory", "Status effects", "Map")
                 
                             
                             # if y2 == "Inventory":
