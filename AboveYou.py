@@ -7,8 +7,7 @@ from stageLake import stageLake
 
 #Main program function
 def main():
-    mainscreen = True
-    stageHell = False
+    mainscreen = False
     #Mainscreen
     while mainscreen:
         #functions.playSound("music/minecraftmusic.mp3", 1)

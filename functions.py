@@ -207,6 +207,29 @@ def playSound(soundPath, volume = 0.01):
     print("music started playing....")
     #Play the music
     mixer.music.play()
+
+def tinyChooseSys(Op1, Op2, Choices="Choices", Menu="Me", Back="Back" ):
+
+    Options = [Op1, Op2, Menu, Back]
+
+    print(f"""                      
+\033[1m{Choices} \033[0m                   
+ \033[1m─────────────────────────     \033[0m               
+\033[1m\033[95m1\033[0m {Options[0]}\t\t     \033[0m     
+\033[1m\033[96m2\033[0m {Options[1]}\t\t    \033[0m        
+ \033[1m─────────────────────────\n\033[0m
+\033[1m3 {Options[2]}\t\t    4 {Options[3]} \033[0m
+ \033[1m─────────────────────────\n\033[0m
+
+ """, )
+    
+    try: 
+     z = int(input("Enter a number you'd like to choose: "))
+     if z == 1 or z == 2 or z == 3 or z == 4:
+        text = Options[(z-1)]
+        return text
+    except:
+         print("Not an option loser")
     
 
 
