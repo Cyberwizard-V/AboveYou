@@ -26,7 +26,7 @@ def intro():
 You suddenly feel a warm feeling in your back and collapse to the floor. 
 Your view is getting hazy and slowly fading away. The only thing you see before the last lights 
 go out is a silhouette of a person running away. A million questions rush into your head. 
-Who is this person? Why me? Why is the floor so floory? Right before you die you swore to find out who killed you. \n\n""", 0.001)
+Who is this person? Why me? Why is the floor so floory? Right before you die you swore to find out who killed you. \n\n\n""", 0.001)
         input("Press enter to continue...")
         clearConsole()
     else:
@@ -80,7 +80,8 @@ def menu(Op1 = "Inventory", Op2 = "playerStatus",Op3 = "Map", op4 = "Back"):
 
     menuOptions = [Op1, Op2, Op3, op4]
     while True:
-        print(f"""\n
+        clearConsole()
+        print(f"""
 Me    |Health: {hitpoints}
 ──────────────────
 \033[95m1\033[0m {menuOptions[0]}
@@ -102,25 +103,26 @@ Inventory
                         break
                 if inventoryCheck in gameInventory:
                     if inventoryCheck == "adoption papers":
-                        print("It is a picture of me in the adoption papers!\n")
+                        print("It is a picture of me in the adoption papers!\n\n")
                         print("You become sad.")
                         gameInventory.remove("adoption papers")
                         print("\nYou discard the adoption papers")
                         playerStats[1] += 1
                     elif inventoryCheck == "car keys":
-                        print("I wish I had a car")
+                        print("I wish I had a car\n\n")
                         clearConsoleEnt()
                     elif inventoryCheck == "picture of your mom":
                         print("She looks oddly familiar...")
                         clearConsoleEnt()
                     elif inventoryCheck == "jar of milk":
                         inputInventory = input("\nThe jar of milk seems to be glowing bright, would you like to drink it? (Y/N) ").lower()
+                        print("\n")
                         clearConsoleEnt()
                         if inputInventory == "y":
                             gameInventory.remove("jar of milk")
                             playerStats[0] += 1
                             print("You feel the power of the milk flowing through your bloodstream. You have gained fire resistance\n")
-                            print("\033[93mjar of milk has been removed from your inventory\033[0m")
+                            print("\033[93mjar of milk has been removed from your inventory\033[0m\n\n")
                             clearConsoleEnt()
                         elif inputInventory == "n":
                             continue
@@ -146,7 +148,7 @@ Status effects
             clearConsoleEnt()
         elif z == "map" or z == "3":
             clearConsole()
-            print(f"\nYou havent found a map yet\n")
+            print(f"\nYou havent found a map yet\n\n")
             clearConsoleEnt()
             continue
         elif z == "back" or z == "4":
