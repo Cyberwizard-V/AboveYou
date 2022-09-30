@@ -8,7 +8,7 @@ from pygame import mixer
 gameInventory = []
 playerStats = [0, 0]
 hitpoints = 3
-
+hints = 0
 
 
 def intro():
