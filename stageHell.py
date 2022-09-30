@@ -109,7 +109,7 @@ You look if there is anything to salvage, from his belongings: \n\n""", 0.001)
                                 functions.clearConsoleEnt()
                             else: 
                                 functions.gameInventory.append("jar of milk")
-                                functions.typeSys(f"""\nYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n\n""", 0.01)
+                                functions.typeSys(f"""\n\033[93mYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n\n\033[0m""", 0.01)
                                 functions.clearConsoleEnt()
                         elif y1 == "adoption papers":
                             functions.clearConsole()
@@ -119,7 +119,7 @@ You look if there is anything to salvage, from his belongings: \n\n""", 0.001)
                                 functions.clearConsoleEnt()
                             else:
                                 functions.gameInventory.append("adoption papers")
-                                functions.typeSys(f"""\nYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n\n""", 0.01)
+                                functions.typeSys(f"""\n\033[93mYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n\n\033[0m""", 0.01)
                                 functions.clearConsoleEnt()
                         elif y1 == "car keys":
                             functions.clearConsole()
@@ -129,7 +129,7 @@ You look if there is anything to salvage, from his belongings: \n\n""", 0.001)
                                 functions.clearConsoleEnt()
                             else:
                                 functions.gameInventory.append("car keys")
-                                functions.typeSys(f"""\nYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n\n""", 0.01)
+                                functions.typeSys(f"""\n\033[93mYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n\n\033[0m""", 0.01)
                                 functions.clearConsoleEnt()
                         elif y1 == "picture of your mom":
                             functions.clearConsole()
@@ -139,15 +139,18 @@ You look if there is anything to salvage, from his belongings: \n\n""", 0.001)
                                 functions.clearConsoleEnt()
                             else:
                                 functions.gameInventory.append("picture of your mom")
-                                functions.typeSys(f"""\nYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n\n\n""", 0.01)
+                                functions.typeSys(f"""\n\033[93mYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n\n\n\033[0m""", 0.01)
                                 functions.clearConsoleEnt()
                         elif y1 == "Me":
                             functions.menu("Inventory", "Status effects", "Map")
                         elif y1 == "Back":
+                            print("")
                             functions.clearConsoleEnt()
                             break
                         else:
-                            functions.typeSys("Not a valid option")
+                            functions.clearConsole()
+                            functions.typeSys("\nNot a valid option\n\n")
+                            functions.clearConsoleEnt()
                             
                 elif y == "Me":
                     functions.menu("Inventory", "Status effects", "Map")

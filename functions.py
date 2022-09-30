@@ -30,7 +30,7 @@ Who is this person? Why me? Why is the floor so floory? Right before you die you
         input("Press enter to continue...")
         clearConsole()
     else:
-        print("Invalid name; please use characters only!")
+        print("\nInvalid name; please use characters only!\n\n")
         playerName = input("Please input your name : ")
 
 
@@ -74,7 +74,31 @@ def chooseSys(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Me", Back="Back" ):
         text = Options[(z-1)]
         return text
     except:
-         print("Not an option loser")
+        typeSys("\nNot an option loser\n\n")
+        clearConsoleEnt()
+
+
+def chooseMaze(Op1, Op2, Op3, Op4, Choices="Choices"):
+
+    Options = [Op1, Op2, Op3, Op4]
+
+    print(f"""                      
+\033[1m{Choices} \033[0m                   
+ \033[1m─────────────────────────     \033[0m               
+\033[1m\033[95m1\033[0m {Options[0]}\t\t     \033[0m     
+\033[1m\033[96m2\033[0m {Options[1]}\t\t    \033[0m      
+\033[1m\033[93m3\033[0m {Options[2]}\t\t   \033[0m               
+\033[1m\033[91m4\033[0m {Options[3]}\t\t\033[0m
+ \033[1m─────────────────────────\n\033[0m
+ """)
+    try: 
+     z = int(input("Enter a number you'd like to choose: "))
+     if z == 1 or z == 2 or z == 3 or z == 4:
+        text = Options[(z-1)]
+        return text
+    except:
+        typeSys("\nYou are lost aren't you\n\n")
+        clearConsoleEnt()
 
 def menu(Op1 = "Inventory", Op2 = "playerStatus",Op3 = "Map", op4 = "Back"):
 
@@ -103,31 +127,47 @@ Inventory
                         break
                 if inventoryCheck in gameInventory:
                     if inventoryCheck == "adoption papers":
-                        print("It is a picture of me in the adoption papers!\n\n")
+                        print("\nIt is a picture of me in the adoption papers!\n\n")
                         print("You become sad.")
                         gameInventory.remove("adoption papers")
-                        print("\nYou discard the adoption papers")
+                        print("\nYou discard the adoption papers\n\n")
                         playerStats[1] += 1
+                        clearConsoleEnt()
                     elif inventoryCheck == "car keys":
-                        print("I wish I had a car\n\n")
+                        print("\nI wish I had a car\n\n")
                         clearConsoleEnt()
                     elif inventoryCheck == "picture of your mom":
-                        print("She looks oddly familiar...")
+                        print("\nShe looks oddly familiar...\n\n")
+                        clearConsoleEnt()
+                    elif inventoryCheck == "mysterious note":
+                        print("\nThe note reads:\n")
+                        print(f"""It is \033[1mright\033[0m to go \033[1mup\033[0m,
+you \033[1mleft\033[0m me on read.
+
+I don't know what it means though.
+""")
+                        clearConsoleEnt()
+                    elif inventoryCheck == "diving suit":
+                        print("\nLooks like a tight suit. This might help me diving in the water.\n\n")
+                        clearConsoleEnt()
+                    elif inventoryCheck == "fishbowl":
+                        print("\nA cozy bowl. I shouldn't pee on the floor.\n\n")
                         clearConsoleEnt()
                     elif inventoryCheck == "jar of milk":
                         inputInventory = input("\nThe jar of milk seems to be glowing bright, would you like to drink it? (Y/N) ").lower()
-                        print("\n")
+                        print("\n\n")
                         clearConsoleEnt()
                         if inputInventory == "y":
                             gameInventory.remove("jar of milk")
                             playerStats[0] += 1
-                            print("You feel the power of the milk flowing through your bloodstream. You have gained fire resistance\n")
+                            print("\nYou feel the power of the milk flowing through your bloodstream. You have gained fire resistance\n\n")
                             print("\033[93mjar of milk has been removed from your inventory\033[0m\n\n")
                             clearConsoleEnt()
                         elif inputInventory == "n":
                             continue
                         else:
-                            print("L bozo, this is not a valid input")
+                            typeSys("\nL bozo, this is not a valid input\n\n")
+                            clearConsoleEnt()
                 CQuit = input("Do you want continue looking in your inventory? (Y/N) ").lower()
                 if CQuit == "y":
                     clearConsole()
@@ -155,7 +195,8 @@ Status effects
             clearConsole()
             break
         else:
-            print("Not a valid option")
+            typeSys("\nNot an option loser\n\n")
+            clearConsoleEnt()
 
         
 
@@ -229,7 +270,8 @@ def tinyChooseSys(Op1, Op2, Choices="Choices", Menu="Me", Back="Back" ):
         text = Options[(z-1)]
         return text
     except:
-         print("Not an option loser")
+        typeSys("\nNot an option loser\n\n")
+        clearConsoleEnt()
     
 
 
