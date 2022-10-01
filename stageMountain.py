@@ -24,7 +24,15 @@ It is a hatch leading to the outside, you push the hatch open...\n\n""", 0.001)
         functions.typeSys(f"""
 Cold air rushes down the hole you came from.
 The entire environment has changed from dark and moist to dry and cloudy.
-The air feels thin and it is harder to breathe.
+The air feels thin and it is harder to breathe. It looks like we are on top of a mountain.
 
-I should look for White's whereabouts. \n\n""", 0.001)
+It is cold, I should quickly look for something to warm me up and White's whereabouts. \n\n""", 0.001)
         functions.clearConsoleEnt()
+
+        functions.typeSys(f"""
+It looks 
+ \n\n""", 0.001)
+
+        environmentMountain = True
+        while environmentMountain:
+            y = functions.chooseSys("talking fish", "garry", "lake", "grass", "Mountain top")
