@@ -16,6 +16,7 @@ def stageLake():
 The sun is shining bright, its been a while since you've seen the outside world.
 The atmosphere feels pleasant, you breath in some fresh air. 
 It smells exactly like that smell when it starts to rain.
+
 Wait, what am I doing. I should go find white\n\n""", 0.001)
                 functions.clearConsoleEnt()
 
@@ -490,6 +491,16 @@ You said you were looking for White?
 The person you are looking for isn't here.
 He once made an escape ladder towards my cave.
 This ladder will lead directly to the ice mountains.
+\n\n""")
+                                                                        functions.clearConsoleEnt()
+
+                                                                        functions.typeSys(f"""
+
+It is riddled with cobwebs and insects.
+Every step you take up echoes down the tunnel.
+It feels like ages climbing this narrow dark ladder.
+
+You climb further into the darkness...
 \n\n""")
                                                                         functions.clearConsoleEnt()
                                                                         stageLake= False
