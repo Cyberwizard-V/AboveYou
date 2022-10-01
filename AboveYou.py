@@ -11,7 +11,7 @@ def main():
     mainscreen = True
     #Mainscreen
     while mainscreen:
-        #functions.playSound("music/minecraftmusic.mp3", 1)
+        functions.playSound("music/minecraftmusic.mp3", 1)
         functions.clearConsole()
         functions.intro()
         break
@@ -19,10 +19,8 @@ def main():
     stageHell1()
     #Stage River/Lake        | BLUE
     stageLake()
-    #Stage iceMountain      | WHITE
+    #Stage iceMountain       | WHITE
     stageMountain()
-
-
 
 main()
 
