@@ -1,8 +1,10 @@
 from re import X
 import functions
 import time
+import climage
 from functions import *
 from image import DrawImage
+
 
 #\033[0m ending quote for color
 def stageLake():
@@ -40,7 +42,8 @@ Talking fish
                         if xfishbowl in gameInventory:
                             functions.typeSys("""Thank you for saving me, I was almost out of breath.
 
-It's dangerous to go alone! Take this. """)
+It's dangerous to go alone! Take this. \n\n""")
+                            functions.clearConsoleEnt()
                             functions.gameInventory.append("diving suit")
                             print(f'''\n\n\033[93mYou've received the item "diving suit" \033[0m\n\n''')
                             functions.gameInventory.remove("fishbowl")
@@ -70,7 +73,7 @@ Garry
                             image.draw_image()
                             functions.typeSys("""\n
 Thank you for drowning my fish!
-Blue always told me to read notes.
+Blue always told me to read my notes.
             \n\n""")
                             functions.clearConsoleEnt() 
                         elif xmystNote in gameInventory:
@@ -83,6 +86,7 @@ Blue always told me to read notes.
                             image = DrawImage.from_file("images/garry.png", (40, 20))
                             image.draw_image()
                             functions.typeSys("\nmeow!\n\n")
+                            functions.clearConsoleEnt()
                             functions.gameInventory.append("mysterious note")
                             print(f'''\n\n\033[93mYou've received a "mysterious note" \033[0m\n\n''')
                             functions.clearConsoleEnt() 
@@ -201,7 +205,7 @@ Water
                                         functions.clearConsole()
                                         continue
                 
-                                    if warning == "y":
+                                    elif warning == "y":
                                         functions.typeSys("""\n
 You dive in the water with your diving gear.
 Every corner seems to be the same down here.
@@ -214,55 +218,295 @@ I should look for a way out!\n\n""")
                                             functions.clearConsole()
                                             functions.typeSys("Try to find a way out... \n")                                #player needs to go right up left if talk to garry after diving suit he tells a hint
                                             e1 = functions.chooseMaze("up", "left", "right", "down", "Random waters")
+                                            
                                             if e1 == "up":
                                                 functions.clearConsole()
-                                                print("It looks like a dead end\n\n")
-                                                functions.clearConsoleEnt()
+                                                wrongway0 = True
+                                                while wrongway0:
+                                                    w0 = functions.chooseMaze("up", "left", "right", "down", "Flooded river")
+                                                    functions.clearConsole()
+                                                    if w0 == "down":
+                                                        functions.clearConsole()
+                                                        break
+                                                    elif w0 == "up":
+                                                        functions.clearConsole()
+                                                        print("It looks like a dead end\n\n")
+                                                        functions.clearConsoleEnt()
+                                                    elif w0 == "left":
+                                                        functions.clearConsole()
+                                                        print("It looks like a dead end\n\n")
+                                                        functions.clearConsoleEnt()
+                                                    elif w0 == "right":
+                                                        functions.clearConsole()
+                                                        print("It looks like a dead end\n\n")
+                                                        functions.clearConsoleEnt()
+                                                    elif w0 == "Me":
+                                                        functions.menu("Inventory", "Status effects", "Map")
+
                                             elif e1 == "down":
                                                 functions.clearConsole()
-                                                print("It looks like a dead end\n\n")
-                                                functions.clearConsoleEnt()
+                                                wrongway1 = True
+                                                while wrongway1:
+                                                    w1 = functions.chooseMaze("up", "left", "right", "down", "Flooded sea")
+                                                    functions.clearConsole()
+                                                    if w1 == "down":
+                                                        functions.clearConsole()
+                                                        print("It looks like a dead end\n\n")
+                                                        functions.clearConsoleEnt()
+                                                    elif w1 == "up":
+                                                        functions.clearConsole()
+                                                        break
+                                                    elif w1 == "left":
+                                                        functions.clearConsole()
+                                                        print("It looks like a dead end\n\n")
+                                                        functions.clearConsoleEnt()
+                                                    elif w1 == "right":
+                                                        functions.clearConsole()
+                                                        print("It looks like a dead end\n\n")
+                                                        functions.clearConsoleEnt()
+                                                    elif w1 == "Me":
+                                                        functions.menu("Inventory", "Status effects", "Map")
+                                                   
+                                            elif e1 == "Me":
+                                                functions.menu("Inventory", "Status effects", "Map")
+
                                             elif e1 == "left":
                                                 functions.clearConsole()
-                                                print("It looks like a dead end\n\n")
-                                                functions.clearConsoleEnt()
-
+                                                wrongway2 = True
+                                                while wrongway2:
+                                                    w2 = functions.chooseMaze("up", "left", "right", "down", "Flooded lake")
+                                                    functions.clearConsole()
+                                                    if w2 == "down":
+                                                        functions.clearConsole()
+                                                        print("It looks like a dead end\n\n")
+                                                        functions.clearConsoleEnt()
+                                                    elif w2 == "up":
+                                                        functions.clearConsole()
+                                                        print("It looks like a dead end\n\n")
+                                                        functions.clearConsoleEnt()
+                                                    elif w2 == "left":
+                                                        functions.clearConsole()
+                                                        print("It looks like a dead end\n\n")
+                                                        functions.clearConsoleEnt()
+                                                    elif w2 == "right":
+                                                        functions.clearConsole()
+                                                        break
+                                                    elif w2 == "Me":
+                                                        functions.menu("Inventory", "Status effects", "Map")
 
                                             elif e1 == "right":
                                                 exploring2 = True
                                                 while exploring2:
                                                     functions.clearConsole()
-                                                    e2 = functions.chooseMaze("up", "left", "right", "down", "Random waters?")
+                                                    e2 = functions.chooseMaze("up", "left", "right", "down", "Unknown waters")
                                                     if e2 =="left":
                                                         functions.clearConsole()
                                                         break
-                                                        
+
+                                                    elif e2 == "Me":
+                                                        functions.menu("Inventory", "Status effects", "Map")    
+
                                                     elif e2 == "right":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
-                                                        functions.clearConsoleEnt()
+                                                        wrongway4 = True
+                                                        while wrongway4:
+                                                            w4 = functions.chooseMaze("up", "left", "right", "down", "Flooded sea")
+                                                            functions.clearConsole()
+                                                            if w4 == "down":
+                                                                functions.clearConsole()
+                                                                print("It looks like a dead end\n\n")
+                                                                functions.clearConsoleEnt()
+                                                            elif w4 == "up":
+                                                                functions.clearConsole()
+                                                                print("It looks like a dead end\n\n")
+                                                                functions.clearConsoleEnt()
+                                                            elif w4 == "left":
+                                                                functions.clearConsole()
+                                                                break
+                                                            elif w4 == "right":
+                                                                functions.clearConsole()
+                                                                print("It looks like a dead end\n\n")
+                                                                functions.clearConsoleEnt()
+                                                            elif w4 == "Me":
+                                                                functions.menu("Inventory", "Status effects", "Map")
+                                                        
                                                     elif e2 == "down":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
-                                                        functions.clearConsoleEnt()
+                                                        wrongway3 = True
+                                                        while wrongway3:
+                                                            w3 = functions.chooseMaze("up", "left", "right", "down", "Flooded sea")
+                                                            functions.clearConsole()
+                                                            if w3 == "down":
+                                                                functions.clearConsole()
+                                                                print("It looks like a dead end\n\n")
+                                                                functions.clearConsoleEnt()
+                                                            elif w3 == "up":
+                                                                functions.clearConsole()
+                                                                break
+                                                            elif w3 == "left":
+                                                                functions.clearConsole()
+                                                                print("It looks like a dead end\n\n")
+                                                                functions.clearConsoleEnt()
+                                                            elif w3 == "right":
+                                                                functions.clearConsole()
+                                                                print("It looks like a dead end\n\n")
+                                                                functions.clearConsoleEnt()
+                                                            elif w3 == "Me":
+                                                                functions.menu("Inventory", "Status effects", "Map")
 
                                                     elif e2 == "up":
                                                         exploring3 = True
                                                         while exploring3:
                                                             functions.clearConsole()
-                                                            e3 = functions.chooseMaze("up", "left", "right", "down", "Random waters!")
-
+                                                            e3 = functions.chooseMaze("up", "left", "right", "down", "Familiar waters")
                                                             if e3 == "down":
-                                                                functions.clearConsole()
                                                                 break
+
+                                                            elif e3 == "Me":
+                                                                functions.menu("Inventory", "Status effects", "Map")
+
+                                                            elif e3 == "right":
+                                                                functions.clearConsole()
+                                                                wrongway5 = True
+                                                                while wrongway5:
+                                                                    w5 = functions.chooseMaze("up", "left", "right", "down", "rock bottom")
+                                                                    functions.clearConsole()
+                                                                    if w5 == "down":
+                                                                        functions.clearConsole()
+                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.clearConsoleEnt()
+                                                                    elif w5 == "up":
+                                                                        functions.clearConsole()
+                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.clearConsoleEnt()
+                                                                    elif w5 == "left":
+                                                                        functions.clearConsole()
+                                                                        break
+                                                                    elif w5 == "right":
+                                                                        functions.clearConsole()
+                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.clearConsoleEnt()
+                                                                    elif w5 == "Me":
+                                                                        functions.menu("Inventory", "Status effects", "Map")
+
+                                                            elif e3 == "up":
+                                                                functions.clearConsole()
+                                                                wrongway6 = True
+                                                                while wrongway6:
+                                                                    w6 = functions.chooseMaze("up", "left", "right", "down", "bikini bottom")
+                                                                    functions.clearConsole()
+                                                                    if w6 == "down":
+                                                                        functions.clearConsole()
+                                                                        break
+                                                                    elif w6 == "up":
+                                                                        functions.clearConsole()
+                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.clearConsoleEnt()
+                                                                    elif w6 == "left":
+                                                                        functions.clearConsole()
+                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.clearConsoleEnt()
+                                                                    elif w6 == "right":
+                                                                        functions.clearConsole()
+                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.clearConsoleEnt()
+                                                                    elif w6 == "Me":
+                                                                        functions.menu("Inventory", "Status effects", "Map")
+
                                                             elif e3 == "left":
                                                                 functions.clearConsole()
-                                                                e3 = functions.chooseSys("pineapple", "blob fish", "rock", "blue's cave", "Familiar waters")
-                                    else:
-                                        functions.clearConsole()
-                                        print("That's not even a choice bruh")
-                                        functions.clearConsoleEnt()
+                                                                found = True
+                                                                while found:
+                                                                    f1 = functions.chooseSys("pineapple", "crusty crab", "rock", "blue's cave", "Known waters")
+                                                                    if f1 == "pineapple":
+                                                                        functions.clearConsole()
+                                                                        print("It looks like some kind of sponge is living inside...")
+                                                                    elif f1 == "crusty crab":
+                                                                        functions.clearConsole()
+                                                                        print("it somehow smells like burgers in here...")
+                                                                    elif f1 == "rock":
+                                                                        functions.clearConsole()
+                                                                        print("The perfect habitat for a starfish")
 
+                                                                    elif f1 == "blue's cave":
+                                                                        functions.clearConsole()
+                                                                        print("\033[96mBlue's cave\033[0m")
+                                                                        functions.typeSys(f"""\n
+Emerging from the scary waters you manage to find blue's cave.
+It is moist, full of lush plants and moss down here.
+Every step you take excretes a pool of water.
+You decide to walk further and look for Blue.\n\n
+""")
+                                                                        functions.clearConsoleEnt()
+                                                                        print("\t\t\t\tNO ONE IS HERE")
+                                                                        output = climage.convert('images/noOne.jpg')
+                                                                        print(output)
+                                                                        print("\t\t\t\tWHAT?")
+                                                                        # image = DrawImage.from_file("images/noOne.jpg", (120,50))
+                                                                        # image.draw_image()
+                                                                        functions.playSound("music/what.mp3", 1)
+                                                                        functions.clearConsoleEnt()
+                                                                        functions.typeSys(f"""\n
+Suddenly Blue emerges from the solid rock floor.\n\n""")
+                                                                        functions.clearConsoleEnt()
+                                                                        print(f"""
+                            WHAT
+__________________________________________________________________
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢴⠊⣉⣉⠉⠉⠉⠙⢦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠐⢿⣿⣿⣦⡀⠀⠀⠀⠱⢄⠀⠀⠀⠀⡄⠶⠛⠙⠛⠉⠒⠤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀⠀⠀⢀⣈⣅⣤⡤⠶⠒⠛⠛⠳⢯⡷⠶⢶⣾⣷⣆⠀⠀⠀⠈⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡶⠶⠚⠛⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠘⢷⡄⠀⠉⠉⠙⠷⠀⠀⠀⠀⢷⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠛⠀⠀⠀⠀⠀⠀⠀⡀⠀⠄⠃⠀⠀⠄⠀⠀⠻⢧⡀⠀⠀⠀⠀⠀⠀⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠂⠈⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠄⠀⠀⠉⠳⢦⣄⡀⠀⠀⢰⣼⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠃⠀⡐⠀⠀⠁⠀⠄⠀⠀⢀⠈⠀⠀⠄⠀⠀⡀⠀⠀⠂⢀⠀⠀⠉⠉⠛⠳⠛⠻⣄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⡀⠠⠀⠁⠠⠀⠀⠀⠀⠀⢀⠀⠀⠀⠂⠀⠀⠠⠀⢀⠀⠂⡀⠐⠀⠤⢠⡁⠚⢷⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⢀⠀⠐⠀⠀⠀⠀⠄⠀⠀⠀⠀⠂⠀⡀⠂⠠⠐⠀⠄⠂⢀⠊⠀⣃⢦⢡⠉⠄⠛⣧⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡇⠀⠈⠀⠀⠀⠀⠀⢀⠀⠀⠄⠀⠁⡀⠐⡀⣀⠁⢠⢡⡌⣀⢆⡄⡌⡰⣈⠆⣻⠜⡂⠑⠬⢿⡆⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⢃⣀⠀⠠⠀⠀⠄⠀⡀⠠⣀⢐⡈⣠⣄⢦⡵⢴⠮⠿⢶⠿⣾⣿⣶⣝⣷⣑⢪⡕⣏⡒⠈⢈⣹⣧⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠀⢻⣿⣿⣷⣿⡶⠿⠾⠓⠚⠋⠉⠁⠈⣀⠤⣄⣆⢳⡬⡶⢤⢠⢉⠋⠻⣽⢦⣹⣿⢡⠂⠀⢼⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣆⠀⠀⠀⠀⠀⠀⠀⠀⣀⢶⣰⠾⣶⣷⡾⢿⣾⣸⢷⣹⢿⣿⢷⡏⣰⠀⡀⠰⠈⠱⠀⢀⠸⣾⢿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢶⣦⣜⣦⣻⣞⣷⣯⣶⣷⣿⣷⣿⣾⣟⣾⡝⣧⢟⡾⣿⣿⣿⢧⡝⣦⣒⢤⣀⣦⣠⢾⣿⡟⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣾⣹⢯⣝⣮⢻⡜⣿⣿⣿⣿⣳⣯⣾⣿⣿⢿⣯⣿⠇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣇⢏⡿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣽⣻⠶⣭⡗⣞⢧⣿⢿⣿⣿⣿⣿⣿⣿⣟⣿⡏⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣎⠜⣧⡻⣽⢿⣿⣿⣿⣿⣽⣿⣎⣿⣦⣽⡞⣮⢼⣛⢾⡹⢯⣿⣿⣳⣿⠇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣾⣰⢻⣭⣛⢿⣯⢿⣿⣟⣯⣟⣼⡷⣯⣝⢮⣳⠻⣬⣛⣿⣼⣿⣽⣿⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠎⠠⠙⣯⠓⢮⠛⣾⡹⣷⡻⣯⣟⣾⡷⣟⡷⣯⢯⣷⣻⡷⣿⣾⡿⣟⣿⢸⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⣴⡿⠁⠀⠁⠰⣯⠈⠤⡙⢤⠳⣵⣟⡿⣾⣻⣽⣟⣿⣿⣿⣿⣯⣿⣿⣯⣿⡻⢾⡉⢇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⢨⣴⠋⠀⠀⠀⠀⠀⣿⠀⡄⠑⢢⢱⡏⣾⣽⢳⡝⣿⣿⣿⣿⣿⣿⣿⣿⣯⣷⣯⡝⢻⡄⢩⢻⣦⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣀⣴⡟⠉⠀⠠⠁⠀⠀⠀⠘⢷⣄⠑⢢⠙⣼⢣⡽⣻⢷⣿⣿⣿⣿⣿⣿⣿⣿⣟⣷⣭⢳⠽⢀⠡⢈⠙⢧⠀
+⠀⠀⠀⠀⢀⣠⡶⠞⡉⠆⡍⡒⠠⢀⣠⣆⠀⠀⠀⠀⠀⠀⠙⠷⣦⣑⠮⣳⢟⣽⣻⣷⣯⣿⣿⣿⣿⣿⣿⣿⣿⣞⠯⠊⢄⠘⡠⠈⠊⡷
+⠀⠀⠀⣤⠟⡉⠐⡀⢂⡱⢊⣥⣿⢿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠾⢷⣿⣼⣷⣟⣿⣿⣿⡿⠿⠛⠋⠌⠤⣉⠂⠄⠡⢀⠁⡗
+⠀⣠⡊⢀⢂⠤⣱⣸⣿⣿⣝⠨⣁⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠁⠂⠀⠄
+____________________________________________________________________
+                            HOW??""")
+                                                                        functions.playSound("music/what.mp3", 1)
+                                                                        functions.clearConsoleEnt()
+                                                                        print(f"""
+\\033[96mBlue\033[0m
+──────────────────\n""")
+                                                                        functions.typeSys(f"""
+
+You said you were looking for White?
+The person you are looking for isn't here.
+He once made an escape ladder towards my cave.
+This ladder will lead directly to the ice mountains.
+\n\n""")
+                                                                        functions.clearConsoleEnt()
+                                                                        stageLake= False
+
+
+                                                                    elif f1 == "Me":
+                                                                        functions.menu("Inventory", "Status effects", "Map")
+                                                                    elif f1 == "Back":
+                                                                        functions.clearConsoleEnt()
+                                                                        break
+                                                                    else:
+                                                                        functions.clearConsole()
+                                                                        functions.typeSys("\nNot a valid option\n\n")
+                                                                        functions.clearConsoleEnt()
+                                    else:
+                                        print("Thats not even a valid option bozo")
+                                        functions.clearConsoleEnt()
 
                                 else:
                                     functions.typeSys("\nA sign is warning you not to enter without directions.\n\nIt looks wet\n\n")    #maybe switch case different print function

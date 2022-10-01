@@ -78,9 +78,9 @@ def chooseSys(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Me", Back="Back" ):
         clearConsoleEnt()
 
 
-def chooseMaze(Op1, Op2, Op3, Op4, Choices="Choices"):
+def chooseMaze(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Me"):
 
-    Options = [Op1, Op2, Op3, Op4]
+    Options = [Op1, Op2, Op3, Op4, Menu]
 
     print(f"""                      
 \033[1m{Choices} \033[0m                   
@@ -90,10 +90,12 @@ def chooseMaze(Op1, Op2, Op3, Op4, Choices="Choices"):
 \033[1m\033[93m3\033[0m {Options[2]}\t\t   \033[0m               
 \033[1m\033[91m4\033[0m {Options[3]}\t\t\033[0m
  \033[1m─────────────────────────\n\033[0m
+ \033[1m5 {Options[4]}\t\t \033[0m
+ \033[1m─────────────────────────\n\033[0m
  """)
     try: 
      z = int(input("Enter a number you'd like to choose: "))
-     if z == 1 or z == 2 or z == 3 or z == 4:
+     if z == 1 or z == 2 or z == 3 or z == 4 or z == 5:
         text = Options[(z-1)]
         return text
     except:
@@ -141,7 +143,9 @@ Inventory
                         clearConsoleEnt()
                     elif inventoryCheck == "mysterious note":
                         print("\nThe note reads:\n")
-                        print(f"""It is \033[1mright\033[0m to go \033[1mup\033[0m,
+                        print(f"""
+Home is like \033[1mrandom waters\033[0m.                 
+It is \033[1mright\033[0m to go \033[1mup\033[0m,
 you \033[1mleft\033[0m me on read.
 
 I don't know what it means though.
@@ -245,7 +249,6 @@ def playSound(soundPath, volume = 0.01):
     #Load audio file
     mixer.music.load(soundPath)
     mixer.music.set_volume(volume)
-    print("music started playing....")
     #Play the music
     mixer.music.play()
 
