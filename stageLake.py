@@ -69,6 +69,7 @@ It's dangerous to go alone! Take this. \n\n""")
                         print(f"""
 Garry
 ──────────────────""")
+                        xmystNote = "mysterious note"
                         if xDivinggear in gameInventory and xmystNote in gameInventory:
                             image = DrawImage.from_file("images/garry.png", (40, 20))
                             image.draw_image()
@@ -200,7 +201,7 @@ Water
                                 xDivinggear = "diving suit"
                                 if xDivinggear in gameInventory:
                                     functions.clearConsole()
-                                    functions.typeSys("A sign is warning you not to enter without directions")
+                                    functions.typeSys("A sign is warning you not to enter without directions.\n\n")
                                     warning = input("Would you still like to proceed to enter the dangerous waters? (Y/N) ").lower()
                                     if warning == "n":
                                         functions.clearConsole()
@@ -483,14 +484,14 @@ ____________________________________________________________________
                                                                         functions.playSound("music/what.mp3", 1)
                                                                         functions.clearConsoleEnt()
                                                                         print(f"""
-\\033[96mBlue\033[0m
+\033[96mBlue\033[0m
 ──────────────────\n""")
                                                                         functions.typeSys(f"""
 
 You said you were looking for White?
 The person you are looking for isn't here.
 He once made an escape ladder towards my cave.
-This ladder will lead directly to the ice mountains.
+This ladder will lead directly to the icy mountains.
 \n\n""")
                                                                         functions.clearConsoleEnt()
 
