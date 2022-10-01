@@ -6,7 +6,7 @@ from pygame import mixer
 
 
 gameInventory = []
-playerStats = [0, 0]
+playerStats = [0, 0, 0, 0]
 hitpoints = 3
 hints = 0
 
@@ -188,6 +188,9 @@ Status effects
                 print("Fire resistance")
             if playerStats[1] == 1:
                 print("Sad")
+            if playerStats[2] >= 1:
+                print("Determined")
+
 
             clearConsoleEnt()
         elif z == "map" or z == "3":

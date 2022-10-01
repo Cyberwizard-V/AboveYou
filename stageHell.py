@@ -61,8 +61,9 @@ Mix tapes
 Large door
 ──────────────────""")
                     if functions.playerStats[0] == 0:
-                        functions.typeSys("Its too hot to touch\n")
+                        functions.typeSys("Its too hot to touch\n\n")
                         functions.hints += 1
+                        functions.clearConsoleEnt
                         if functions.hints > 1:
                             print("\ntip: Because you're retarded we are giving a hint. Look in your inventory for something against the heat\n")
                             print("Its too hot to touch\n\n")
@@ -73,6 +74,7 @@ Large door
                             functions.typeSys(f"""
 You get blinded by the light. Your eyes and body get used to the ambience of the room.
 You open the large door and reveal a huge throne room in front of you, it looks like someone has been waiting for you\n\n""", 0.001)
+                            functions.clearConsoleEnt()
                             print(f"""
 \033[91mRed\033[0m
 ──────────────────""")

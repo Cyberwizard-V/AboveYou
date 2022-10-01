@@ -35,7 +35,7 @@ You look around, and see\n\n""", 0.001)
                     
                     y = functions.chooseSys("talking fish", "garry", "lake", "grass", "Lakeside")    #fish needs water, doesnt say anything unless you find a aquarium somewhere at lake area (abandoned ship), person 2 says please find a fish bowl for fish
                     if y == "talking fish":                                                          #selecting a npc will show the npc name on top and talk., if you talk you can select multiple conversation types
-                        functions.clearConsoleEnt()
+                        functions.clearConsole()
                         print(f"""
 Talking fish
 ──────────────────""")
@@ -364,6 +364,7 @@ I should look for a way out!\n\n""")
                                                             functions.clearConsole()
                                                             e3 = functions.chooseMaze("up", "left", "right", "down", "Familiar waters")
                                                             if e3 == "down":
+                                                                functions.clearConsole()
                                                                 break
 
                                                             elif e3 == "Me":
@@ -423,21 +424,21 @@ I should look for a way out!\n\n""")
                                                                 while found:
                                                                     f1 = functions.chooseSys("pineapple", "crusty crab", "rock", "blue's cave", "Known waters")
                                                                     if f1 == "pineapple":
+                                                                        functions.clearConsole()
                                                                         pineapple = climage.convert('images/pineapple.png')
                                                                         print (pineapple)
-                                                                        functions.clearConsole()
                                                                         print("It looks like some kind of sponge is living inside...")
                                                                         functions.clearConsoleEnt()
                                                                     elif f1 == "crusty crab":
+                                                                        functions.clearConsole()
                                                                         crab = climage.convert('images/crab.png')
                                                                         print (crab)
-                                                                        functions.clearConsole()
                                                                         print("it somehow smells like burgers in here...")
                                                                         functions.clearConsoleEnt()
                                                                     elif f1 == "rock":
+                                                                        functions.clearConsole()
                                                                         rock = climage.convert('images/rock.png')
                                                                         print (rock)
-                                                                        functions.clearConsole()
                                                                         print("The perfect habitat for a starfish")
                                                                         functions.clearConsoleEnt()
 
