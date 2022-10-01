@@ -29,8 +29,10 @@ You are curious and walk towards the sound...\n\n""", 0.001)
                 options = [0, 0 ,0, 0, 0]
                 optionsC = [0, 0 ,0, 0, 0]
                 environmentLake = True
+                functions.typeSys(f"""
+You look around, and see\n\n""", 0.001)
                 while environmentLake:
-                    functions.typeSys(f"""You look around, and see\n\n""", 0.001)
+                    
                     y = functions.chooseSys("talking fish", "garry", "lake", "grass", "Lakeside")    #fish needs water, doesnt say anything unless you find a aquarium somewhere at lake area (abandoned ship), person 2 says please find a fish bowl for fish
                     if y == "talking fish":                                                          #selecting a npc will show the npc name on top and talk., if you talk you can select multiple conversation types
                         functions.clearConsoleEnt()
@@ -421,14 +423,23 @@ I should look for a way out!\n\n""")
                                                                 while found:
                                                                     f1 = functions.chooseSys("pineapple", "crusty crab", "rock", "blue's cave", "Known waters")
                                                                     if f1 == "pineapple":
+                                                                        pineapple = climage.convert('images/pineapple.png')
+                                                                        print (pineapple)
                                                                         functions.clearConsole()
                                                                         print("It looks like some kind of sponge is living inside...")
+                                                                        functions.clearConsoleEnt()
                                                                     elif f1 == "crusty crab":
+                                                                        crab = climage.convert('images/crab.png')
+                                                                        print (crab)
                                                                         functions.clearConsole()
                                                                         print("it somehow smells like burgers in here...")
+                                                                        functions.clearConsoleEnt()
                                                                     elif f1 == "rock":
+                                                                        rock = climage.convert('images/rock.png')
+                                                                        print (rock)
                                                                         functions.clearConsole()
                                                                         print("The perfect habitat for a starfish")
+                                                                        functions.clearConsoleEnt()
 
                                                                     elif f1 == "blue's cave":
                                                                         functions.clearConsole()
@@ -504,7 +515,13 @@ It feels like ages climbing this narrow dark ladder.
 You climb further into the darkness...
 \n\n""")
                                                                         functions.clearConsoleEnt()
-                                                                        stageLake= False
+                                                                        stageLake = False 
+                                                                        exploring1 = False
+                                                                        exploring2 = False
+                                                                        exploring3 = False
+                                                                        found = False
+                                                                        lake = False
+                                                                        environmentLake = False
 
 
                                                                     elif f1 == "Me":
