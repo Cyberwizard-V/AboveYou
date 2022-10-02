@@ -168,7 +168,7 @@ Credits: ඞJeffrey Yeh, ඞViktor Stam
                 functions.clearConsole()
                 print("Pervert")
                 functions.clearConsoleEnt()
-            elif s1 == "Me":
+            elif s1 == "Menu":
                 functions.menu("Inventory", "Status effects", "Map")
             else: 
                 functions.clearConsole()

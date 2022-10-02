@@ -82,7 +82,7 @@ A song starts playinig...\n\n""")
 A song starts playinig...\n\n""")
                                         functions.playSound("music/ok.mp3", 1)
                                         functions.clearConsoleEnt()
-                                elif bb == "Me":
+                                elif bb == "Menu":
                                         functions.clearConsole()
                                         functions.menu("Inventory", "Status effects", "Map")
                                 elif bb == "Back":
@@ -132,6 +132,7 @@ It looks like a love letter?
 \n\n""")
                         
                         secret = input("Press enter to continue? ").lower()
+                        functions.clearConsole()
                         if "future" in secret:   
                                 functions.gameInventory.append(xsecret)
                                 functions.clearConsoleEnt()
@@ -142,7 +143,7 @@ It looks like a love letter?
                                 print("bruh you stupid...")
 
                                 
-                elif b1 == "Me":
+                elif b1 == "Menu":
                         functions.clearConsole()
                         functions.menu("Inventory", "Status effects", "Map")
                 elif b1 == "Back":
@@ -196,11 +197,17 @@ The typical looking at a lab on a mountain cutscene...\n\n
                                                                 functions.clearConsole()
                                                                 functions.typeSys(f"""beep boop. Welcome back professor. beep boop\n\n""")
                                                                 functions.clearConsoleEnt()
+                                                        else: 
+                                                                functions.clearConsole()
+                                                                functions.tinyChooseSys("Incorrect password!")
+                                                                functions.clearConsoleEnt()
+                                                                break
                                                 else: 
                                                         functions.clearConsole()
-                                                        functions.tinyChooseSys("Incorrect password, I like jazz")
+                                                        functions.tinyChooseSys("Incorrect password!")
                                                         functions.clearConsoleEnt()
                                                         break
+                                                        
 
                                                 
                                                 while insideLab:
@@ -255,7 +262,7 @@ Gun.
                                                                         functions.clearConsoleEnt()
                                                                         print(f'''\n\n\033[93mbang bang is a  "{xGun}" you received \033[0m\n\n''')
                                                                         functions.clearConsoleEnt()
-                                                        elif l1 == "Me":
+                                                        elif l1 == "Menu":
                                                                 functions.clearConsole()
                                                                 functions.menu("Inventory", "Status effects", "Map")
                                                         elif l1 == "Back":
@@ -326,7 +333,7 @@ skill issue ...\n\n""", 0.05)
                                                                         stageMountain = False
                                                                         break
 
-                                elif p1 == "Me":
+                                elif p1 == "Menu":
                                         functions.clearConsole()
                                         functions.menu("Inventory", "Status effects", "Map")
                                 elif p1 == "Back":
@@ -371,7 +378,7 @@ Clouds
 You are on cloud9, chase that clout                                             
 \n\n""")                                                                                               
                                                         functions.clearConsoleEnt() 
-                                                elif t1 == "Me":
+                                                elif t1 == "Menu":
                                                         functions.clearConsole()
                                                         functions.menu("Inventory", "Status effects", "Map")
                                                 elif t1 == "Back":

@@ -146,11 +146,13 @@ It says: The Titanic.\n\n""", 0.001)
 Funny skeleton...
 ──────────────────""")
                                         functions.typeSys("Why did the skeleton go to the party alone?...\n\n")
+                                        functions.typeSys("...\n\n", 0.5)
                                         functions.typeSys("Because he had no body to go with him!!\n\n")
-                                        image = DrawImage.from_file("images/skeleton.jpg", (30,15))
+                                        image = DrawImage.from_file("images/skeleton.jpg", (30, 15))
                                         image.draw_image()
                                         functions.clearConsoleEnt()
-                                    elif y2 == "Me":
+                        
+                                    elif y2 == "Menu":
                                         functions.menu("Inventory", "Status effects", "Map")
                                     elif y2 == "Back":
                                         functions.clearConsoleEnt()
@@ -247,7 +249,7 @@ I should look for a way out!\n\n""")
                                                         print("bruh\n\n")
                                                         functions.playSound("music/vineboom.mp3", 100)
                                                         functions.clearConsoleEnt()
-                                                    elif w0 == "Me":
+                                                    elif w0 == "Menu":
                                                         functions.menu("Inventory", "Status effects", "Map")
 
                                             elif e1 == "down":
@@ -274,10 +276,10 @@ I should look for a way out!\n\n""")
                                                         functions.playSound("music/vineboom.mp3", 100)
                                                         print("the end?\n\n")
                                                         functions.clearConsoleEnt()
-                                                    elif w1 == "Me":
+                                                    elif w1 == "Menu":
                                                         functions.menu("Inventory", "Status effects", "Map")
                                                    
-                                            elif e1 == "Me":
+                                            elif e1 == "Menu":
                                                 functions.menu("Inventory", "Status effects", "Map")
 
                                             elif e1 == "left":
@@ -304,7 +306,7 @@ I should look for a way out!\n\n""")
                                                     elif w2 == "right":
                                                         functions.clearConsole()
                                                         break
-                                                    elif w2 == "Me":
+                                                    elif w2 == "Menu":
                                                         functions.menu("Inventory", "Status effects", "Map")
 
                                             elif e1 == "right":
@@ -316,7 +318,7 @@ I should look for a way out!\n\n""")
                                                         functions.clearConsole()
                                                         break
 
-                                                    elif e2 == "Me":
+                                                    elif e2 == "Menu":
                                                         functions.menu("Inventory", "Status effects", "Map")    
 
                                                     elif e2 == "right":
@@ -343,7 +345,7 @@ I should look for a way out!\n\n""")
                                                                 functions.playSound("music/vineboom.mp3", 100)
                                                                 print("Read the note\n\n")
                                                                 functions.clearConsoleEnt()
-                                                            elif w4 == "Me":
+                                                            elif w4 == "Menu":
                                                                 functions.menu("Inventory", "Status effects", "Map")
                                                         
                                                     elif e2 == "down":
@@ -369,7 +371,7 @@ I should look for a way out!\n\n""")
                                                                 functions.playSound("music/vineboom.mp3", 100)
                                                                 print("happy feet? wombo combo it isnt here\n\n")
                                                                 functions.clearConsoleEnt()
-                                                            elif w3 == "Me":
+                                                            elif w3 == "Menu":
                                                                 functions.menu("Inventory", "Status effects", "Map")
 
                                                     elif e2 == "up":
@@ -381,7 +383,7 @@ I should look for a way out!\n\n""")
                                                                 functions.clearConsole()
                                                                 break
 
-                                                            elif e3 == "Me":
+                                                            elif e3 == "Menu":
                                                                 functions.menu("Inventory", "Status effects", "Map")
 
                                                             elif e3 == "right":
@@ -408,7 +410,7 @@ I should look for a way out!\n\n""")
                                                                         functions.playSound("music/vineboom.mp3", 100)
                                                                         print("you messed up\n\n")
                                                                         functions.clearConsoleEnt()
-                                                                    elif w5 == "Me":
+                                                                    elif w5 == "Menu":
                                                                         functions.menu("Inventory", "Status effects", "Map")
 
                                                             elif e3 == "up":
@@ -435,7 +437,7 @@ I should look for a way out!\n\n""")
                                                                         functions.playSound("music/vineboom.mp3", 100)
                                                                         print("you made it! jk you didnt\n\n")
                                                                         functions.clearConsoleEnt()
-                                                                    elif w6 == "Me":
+                                                                    elif w6 == "Menu":
                                                                         functions.menu("Inventory", "Status effects", "Map")
 
                                                             elif e3 == "left":
@@ -546,7 +548,7 @@ You climb further into the darkness...
                                                                         environmentLake = False
 
 
-                                                                    elif f1 == "Me":
+                                                                    elif f1 == "Menu":
                                                                         functions.menu("Inventory", "Status effects", "Map")
                                                                     elif f1 == "Back":
                                                                         functions.clearConsoleEnt()
@@ -562,7 +564,7 @@ You climb further into the darkness...
                                 else:
                                     functions.typeSys("\nA sign is warning you not to enter without directions.\n\nIt looks wet\n\n")    #maybe switch case different print function
                                 functions.clearConsoleEnt()
-                            elif y1 == "Me":
+                            elif y1 == "Menu":
                                 functions.menu("Inventory", "Status effects", "Map")
                             elif y1 == "Back":
                                 functions.clearConsoleEnt()
@@ -572,6 +574,6 @@ You climb further into the darkness...
                                 functions.typeSys("\nNot a valid option\n\n")
                                 functions.clearConsoleEnt()
                                 
-                    elif y == "Me":
+                    elif y == "Menu":
                         functions.menu("Inventory", "Status effects", "Map")
 

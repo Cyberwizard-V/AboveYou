@@ -30,7 +30,7 @@ Who is this person? Why me? Why is the floor so floory? Right before you die you
         input("Press enter to continue...")
         clearConsole()
     else:
-        print("\nInvalid name; please use characters only!\n\n")
+        print("\nInvalid name; please use characters only, no spaces!\n\n")
         playerName = input("Please input your name : ")
 
 
@@ -51,7 +51,7 @@ def clearConsoleEnt():
     os.system(command)
 
 
-def chooseSys(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Me", Back="Back" ):
+def chooseSys(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Menu", Back="Back" ):
 
     Options = [Op1, Op2, Op3, Op4, Menu, Back]
 
@@ -78,7 +78,7 @@ def chooseSys(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Me", Back="Back" ):
         clearConsoleEnt()
 
 
-def chooseMaze(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Me"):
+def chooseMaze(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Menu"):
 
     Options = [Op1, Op2, Op3, Op4, Menu]
 
@@ -286,7 +286,7 @@ def playSound(soundPath, volume = 0.01):
     #Play the music
     mixer.music.play()
 
-def tinyChooseSys(Op1, Op2, Choices="Choices", Menu="Me", Back="Back" ):
+def tinyChooseSys(Op1, Op2, Choices="Choices", Menu="Menu", Back="Back" ):
 
     Options = [Op1, Op2, Menu, Back]
 

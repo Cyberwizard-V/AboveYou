@@ -9,10 +9,12 @@ from image import DrawImage
 def stageHell1():
     stageHell = True
 
+
+
     while stageHell:
             functions.typeSys(f"""
 Warmth is flowing into your body again. 
-You open your eyes. It is crimson red and fire seems to be burning eternally. 
+You open your eyes. The area is crimson red and fire seems to be burning eternally. 
 Everything you see is engulfed in flames, it could be a thousand degrees in here. 
 The stench of burning body’s and sulphur is rushing into your nose. 
 I need to find a way out of here. 
@@ -41,8 +43,8 @@ Sussy chest
                         functions.clearConsoleEnt()
                     else:
                         functions.typeSys(f"""\n
-You attempt to inspect the sussy chest, the chest starts to smile and show its teeth when you get closer.
-Its too late to jump out of the way, you get bitten by the chest. Just like Darksouls.\n\n""", 0.001)
+You attempt to inspect the sussy chest, the chest starts to smile and show it's teeth when you get closer.
+It's too late to jump out of the way, you get bitten by the chest. Just like Darksouls.\n\n""", 0.001)
                         functions.typeSys("You lost 1 \033[91mhp\033[0m\n\n")
                         functions.hitpoints -= 1
                         functions.typeSys(f"current \033[91mhp\033[0m: {functions.hitpoints}\n\n")
@@ -69,12 +71,12 @@ Funny skeleton!!
 Large door
 ──────────────────""")
                     if functions.playerStats[0] == 0:
-                        functions.typeSys("Its too hot to touch\n\n")
+                        functions.typeSys("It's too hot to touch\n\n")
                         functions.hints += 1
                         functions.clearConsoleEnt()
                         if functions.hints > 1:
                             print("\ntip: Because you're retarded we are giving a hint. Look in your inventory for something against the heat\n")
-                            print("Its too hot to touch\n\n")
+                            print("It's too hot to touch\n\n")
                             functions.clearConsoleEnt()
                     elif functions.playerStats[0] == 1:
                             functions.clearConsole()
@@ -150,7 +152,7 @@ You look if there is anything to salvage, from his belongings: \n\n""", 0.001)
                                 functions.gameInventory.append("picture of your mom")
                                 functions.typeSys(f"""\n\033[93mYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(y1)]}\n\n\n\033[0m""", 0.01)
                                 functions.clearConsoleEnt()
-                        elif y1 == "Me":
+                        elif y1 == "Menu":
                             functions.menu("Inventory", "Status effects", "Map")
                         elif y1 == "Back":
                             print("")
@@ -161,5 +163,5 @@ You look if there is anything to salvage, from his belongings: \n\n""", 0.001)
                             functions.typeSys("\nNot a valid option\n\n")
                             functions.clearConsoleEnt()
                             
-                elif y == "Me":
+                elif y == "Menu":
                     functions.menu("Inventory", "Status effects", "Map")
