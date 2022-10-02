@@ -1,6 +1,9 @@
+from re import X
 import functions
 import time
+import climage
 from functions import *
+from image import DrawImage
 
 
 def stageHell1():
@@ -26,7 +29,7 @@ I should look for something, which can help me against the heat.\n\n""", 0.001)
             environmentHell = True
             while environmentHell:
                 functions.typeSys(f"""You look around, and see\n\n""", 0.001)
-                y = functions.chooseSys("sussy chest", "a corpse", "mix tapes", "large door", "surroundings")
+                y = functions.chooseSys("sussy chest", "a corpse", "skeleton", "large door", "surroundings")
                 if y == "sussy chest":
                     functions.clearConsole()
                     print(f"""
@@ -48,13 +51,18 @@ Its too late to jump out of the way, you get bitten by the chest. Just like Dark
                     functions.clearConsole()
                     functions.typeSys("\n\nYou can't go back here.\n\n")
                     functions.clearConsoleEnt()
-                elif y == "mix tapes":
+                elif y == "skeleton":
                     functions.clearConsole()
                     print(f"""
-Mix tapes
+Funny skeleton!!
 ──────────────────""")
-                    functions.typeSys("We open this and play a mix tape earrape?, after this you lose 1 hp?\n\n")
+                    functions.typeSys("What do skelletons order at restaurants?\n\n")
+                    functions.typeSys("...\n\n", 0.5)
+                    functions.typeSys("Spare ribs\n\n")
+                    image = DrawImage.from_file("images/skeleton.jpg", (30, 15))
+                    image.draw_image()
                     functions.clearConsoleEnt()
+
                 elif y == "large door":
                     functions.clearConsole()
                     print(f"""
@@ -63,7 +71,7 @@ Large door
                     if functions.playerStats[0] == 0:
                         functions.typeSys("Its too hot to touch\n\n")
                         functions.hints += 1
-                        functions.clearConsoleEnt
+                        functions.clearConsoleEnt()
                         if functions.hints > 1:
                             print("\ntip: Because you're retarded we are giving a hint. Look in your inventory for something against the heat\n")
                             print("Its too hot to touch\n\n")
@@ -101,7 +109,6 @@ You look if there is anything to salvage, from his belongings: \n\n""", 0.001)
                     corpse = True
                     while corpse:
                         functions.typeSys("Choose a item to inspect or pickup: \n")
-                        print("─" * 65)
                         y1 = functions.chooseSys("jar of milk", "adoption papers", "car keys", "picture of your mom", "Corpse")
                         if y1 == "jar of milk":
                             functions.clearConsole()

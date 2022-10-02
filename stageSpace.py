@@ -71,9 +71,13 @@ It seems like he got braindead from the vial lol
             elif s1 == "big red button":
                 functions.clearConsole()
                 functions.typeSys(f"""
-The big red button is labled "Back to earth"... I pressed it. 
+The big red button is labled "Back to earth"
 
+I quickly press it without thinking...""")
+
+                functions.typeSys(f"""
 The doors suddenly open up and shoots me into space.
+
 
         ~+
 
@@ -89,6 +93,8 @@ The doors suddenly open up and shoots me into space.
 
 """, 0.001)
                 functions.clearConsoleEnt()
+                
+                
                 if note1 and note2:
                     functions.clearConsole()
                     functions.typeSys(f"""
@@ -111,9 +117,11 @@ Credits: ඞJeffrey Yeh, ඞViktor Stam
 Thanks for reading the extra lore! :)
 
 """, 0.001)         
+                    
                     functions.clearConsoleEnt()
                     break
                 elif playerStats[4]:
+                    functions.clearConsole()
                     functions.typeSys(f"""
 You slowly drift away in space for eternity... 
 
@@ -131,9 +139,11 @@ You slowly drift away in space for eternity...
                                                                                    
 Credits: ඞJeffrey Yeh, ඞViktor Stam
 
-""", 0.001)
+""", 0.001)         
+                    functions.clearConsoleEnt()
                     break
                 elif playerStats[4] and "gun" in gameInventory:
+                    functions.clearConsole()
                     functions.typeSys(f"""
 I will shoot myself so i get sent back to hell and i will fuck red up.
 
@@ -152,7 +162,7 @@ I will shoot myself so i get sent back to hell and i will fuck red up.
 Credits: ඞJeffrey Yeh, ඞViktor Stam
 
 """, 0.001)
-
+                    functions.clearConsoleEnt()
                     break
             elif s1 == "hard socks":
                 functions.clearConsole()
@@ -160,4 +170,25 @@ Credits: ඞJeffrey Yeh, ඞViktor Stam
                 functions.clearConsoleEnt()
             elif s1 == "Me":
                 functions.menu("Inventory", "Status effects", "Map")
-    
+            else: 
+                functions.clearConsole()
+                functions.typeSys(f"""
+I will shoot myself so i get sent back to hell and i will fuck red up.
+
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
+ ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌▐░▌    ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ඞඞඞඞ
+                                                                                   
+Credits: ඞJeffrey Yeh, ඞViktor Stam
+
+""", 0.001)
+                functions.clearConsoleEnt()
+                break
