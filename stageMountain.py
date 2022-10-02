@@ -8,7 +8,7 @@ from image import DrawImage
 #\033[0m ending quote for color
 optionsM = [0, 0 ,0, 0, 0]
 xsecret = "lab coat"
-xGun = "Gun"
+xGun = "gun"
 def stageMountain():
     stageMountain = True
     mountainTop = True
