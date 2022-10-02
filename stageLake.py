@@ -234,15 +234,18 @@ I should look for a way out!\n\n""")
                                                         break
                                                     elif w0 == "up":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
+                                                        print("Not here\n\n")
+                                                        functions.playSound("music/vineboom.mp3", 100)
                                                         functions.clearConsoleEnt()
                                                     elif w0 == "left":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
+                                                        print("Use your brain\n\n")
+                                                        functions.playSound("music/vineboom.mp3", 100)
                                                         functions.clearConsoleEnt()
                                                     elif w0 == "right":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
+                                                        print("bruh\n\n")
+                                                        functions.playSound("music/vineboom.mp3", 100)
                                                         functions.clearConsoleEnt()
                                                     elif w0 == "Me":
                                                         functions.menu("Inventory", "Status effects", "Map")
@@ -255,18 +258,21 @@ I should look for a way out!\n\n""")
                                                     functions.clearConsole()
                                                     if w1 == "down":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
+                                                        print("skill issue\n\n")
+                                                        functions.playSound("music/vineboom.mp3", 100)
                                                         functions.clearConsoleEnt()
                                                     elif w1 == "up":
                                                         functions.clearConsole()
                                                         break
                                                     elif w1 == "left":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
+                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                        print("small brain moment\n\n")
                                                         functions.clearConsoleEnt()
                                                     elif w1 == "right":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
+                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                        print("the end?\n\n")
                                                         functions.clearConsoleEnt()
                                                     elif w1 == "Me":
                                                         functions.menu("Inventory", "Status effects", "Map")
@@ -282,14 +288,17 @@ I should look for a way out!\n\n""")
                                                     functions.clearConsole()
                                                     if w2 == "down":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
+                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                        print("syke not here\n\n")
                                                         functions.clearConsoleEnt()
                                                     elif w2 == "up":
                                                         functions.clearConsole()
-                                                        print("It looks like a dead end\n\n")
+                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                        print("you fall into the backrooms it isnt here.\n\n")
                                                         functions.clearConsoleEnt()
                                                     elif w2 == "left":
                                                         functions.clearConsole()
+                                                        functions.playSound("music/vineboom.mp3", 100)
                                                         print("It looks like a dead end\n\n")
                                                         functions.clearConsoleEnt()
                                                     elif w2 == "right":
@@ -318,18 +327,21 @@ I should look for a way out!\n\n""")
                                                             functions.clearConsole()
                                                             if w4 == "down":
                                                                 functions.clearConsole()
-                                                                print("It looks like a dead end\n\n")
+                                                                functions.playSound("music/vineboom.mp3", 100)
+                                                                print("Do you know da wae\n\n")
                                                                 functions.clearConsoleEnt()
                                                             elif w4 == "up":
                                                                 functions.clearConsole()
-                                                                print("It looks like a dead end\n\n")
+                                                                functions.playSound("music/vineboom.mp3", 100)
+                                                                print("You dont know da wae\n\n")
                                                                 functions.clearConsoleEnt()
                                                             elif w4 == "left":
                                                                 functions.clearConsole()
                                                                 break
                                                             elif w4 == "right":
                                                                 functions.clearConsole()
-                                                                print("It looks like a dead end\n\n")
+                                                                functions.playSound("music/vineboom.mp3", 100)
+                                                                print("Read the note\n\n")
                                                                 functions.clearConsoleEnt()
                                                             elif w4 == "Me":
                                                                 functions.menu("Inventory", "Status effects", "Map")
@@ -342,18 +354,20 @@ I should look for a way out!\n\n""")
                                                             functions.clearConsole()
                                                             if w3 == "down":
                                                                 functions.clearConsole()
-                                                                print("It looks like a dead end\n\n")
+                                                                functions.playSound("music/vineboom.mp3", 100)
+                                                                print("get back to home and read the note\n\n")
                                                                 functions.clearConsoleEnt()
                                                             elif w3 == "up":
                                                                 functions.clearConsole()
                                                                 break
                                                             elif w3 == "left":
                                                                 functions.clearConsole()
-                                                                print("It looks like a dead end\n\n")
+                                                                print("ooooff\n\n")
                                                                 functions.clearConsoleEnt()
                                                             elif w3 == "right":
                                                                 functions.clearConsole()
-                                                                print("It looks like a dead end\n\n")
+                                                                functions.playSound("music/vineboom.mp3", 100)
+                                                                print("happy feet? wombo combo it isnt here\n\n")
                                                                 functions.clearConsoleEnt()
                                                             elif w3 == "Me":
                                                                 functions.menu("Inventory", "Status effects", "Map")
@@ -378,18 +392,21 @@ I should look for a way out!\n\n""")
                                                                     functions.clearConsole()
                                                                     if w5 == "down":
                                                                         functions.clearConsole()
-                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                                        print("dead end\n\n")
                                                                         functions.clearConsoleEnt()
                                                                     elif w5 == "up":
                                                                         functions.clearConsole()
-                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                                        print("nope not here either\n\n")
                                                                         functions.clearConsoleEnt()
                                                                     elif w5 == "left":
                                                                         functions.clearConsole()
                                                                         break
                                                                     elif w5 == "right":
                                                                         functions.clearConsole()
-                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                                        print("you messed up\n\n")
                                                                         functions.clearConsoleEnt()
                                                                     elif w5 == "Me":
                                                                         functions.menu("Inventory", "Status effects", "Map")
@@ -405,15 +422,18 @@ I should look for a way out!\n\n""")
                                                                         break
                                                                     elif w6 == "up":
                                                                         functions.clearConsole()
-                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                                        print("almost there but not here\n\n")
                                                                         functions.clearConsoleEnt()
                                                                     elif w6 == "left":
                                                                         functions.clearConsole()
-                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                                        print("nice try but no\n\n")
                                                                         functions.clearConsoleEnt()
                                                                     elif w6 == "right":
                                                                         functions.clearConsole()
-                                                                        print("It looks like a dead end\n\n")
+                                                                        functions.playSound("music/vineboom.mp3", 100)
+                                                                        print("you made it! jk you didnt\n\n")
                                                                         functions.clearConsoleEnt()
                                                                     elif w6 == "Me":
                                                                         functions.menu("Inventory", "Status effects", "Map")
@@ -421,6 +441,7 @@ I should look for a way out!\n\n""")
                                                             elif e3 == "left":
                                                                 functions.clearConsole()
                                                                 found = True
+                                                                functions.typeSys("You found your way out off the waters, you know where you are. you've seen this on tv before...\n\n")
                                                                 while found:
                                                                     f1 = functions.chooseSys("pineapple", "crusty crab", "rock", "blue's cave", "Known waters")
                                                                     if f1 == "pineapple":

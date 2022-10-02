@@ -17,6 +17,8 @@ AboveYou is a fun type based text game.
 * Sys
 * Os
 * Time
+* climage
+* terminal-img
 
 ### Installing  / Getting started 🪄
 

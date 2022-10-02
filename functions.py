@@ -6,7 +6,7 @@ from pygame import mixer
 
 
 gameInventory = []
-playerStats = [0, 0, 0, 0]
+playerStats = [0, 0, 0, 0, 0]
 hitpoints = 3
 hints = 0
 
@@ -154,8 +154,21 @@ I don't know what it means though.
                     elif inventoryCheck == "diving suit":
                         print("\nLooks like a tight suit. This might help me diving in the water.\n\n")
                         clearConsoleEnt()
+                    elif inventoryCheck == "lab coat":
+                        print("\nSmells like the scientist outside... Now I can steal his identity!\n\n")
+                        clearConsoleEnt()
                     elif inventoryCheck == "fishbowl":
                         print("\nA cozy bowl. I shouldn't pee on the floor.\n\n")
+                        clearConsoleEnt()
+                    elif inventoryCheck == "snow":
+                        print("\nIt is made out of snowman flesh\n\n")
+                        clearConsoleEnt()
+                    elif inventoryCheck == "notebook":
+                        print(f"""
+
+Wow it is the new notebookXSproMAX 12 Lite XXL limited edition GOLD PLATED camera screen 15 xs xxs android phone notebook laptop gtx 5000!! there is a note on the back of it
+                        
+password: jazz""")
                         clearConsoleEnt()
                     elif inventoryCheck == "jar of milk":
                         inputInventory = input("\nThe jar of milk seems to be glowing bright, would you like to drink it? (Y/N) ").lower()
@@ -169,6 +182,20 @@ I don't know what it means though.
                             clearConsoleEnt()
                         elif inputInventory == "n":
                             continue
+
+                    elif inventoryCheck == "strange vial":
+                        inputInventory = input("\nIt smells like the vial which got White deranged. Do you still want to consume it? (Y/N) ").lower()
+                        print("\n\n")
+                        clearConsoleEnt()
+                        if inputInventory == "y":
+                            gameInventory.remove("strange vial")
+                            playerStats[4] += 1
+                            print("\n\nYou feel the power of breathing. You can breathe oxygen?\n")
+                            print("\033[93m'strange vial' has been removed from your inventory\033[0m\n\n")
+                            clearConsoleEnt()
+                        elif inputInventory == "n":
+                            continue
+
                         else:
                             typeSys("\nL bozo, this is not a valid input\n\n")
                             clearConsoleEnt()
@@ -190,6 +217,10 @@ Status effects
                 print("Sad")
             if playerStats[2] >= 1:
                 print("Determined")
+            if playerStats[3] >= 1:
+                print("Pilot")
+            if playerStats[4] == 1:
+                print("Oxygen breather")
 
 
             clearConsoleEnt()
