@@ -9,7 +9,7 @@ from stageSpace import stageSpace
 
 #Main program function
 def main():
-    mainscreen = True
+    mainscreen = False
     #Mainscreen
     while mainscreen:
         functions.playSound("music/minecraftmusic.mp3", 1)
@@ -17,9 +17,9 @@ def main():
         functions.intro()
         break
     #Stage hell/red's throne | RED
-    stageHell1()
-    #Stage River/Lake        | BLUE
-    stageLake()
+    # stageHell1()
+    # #Stage River/Lake        | BLUE
+    # stageLake()
     #Stage iceMountain       | WHITE
     stageMountain()
     # Stage space            | Truth

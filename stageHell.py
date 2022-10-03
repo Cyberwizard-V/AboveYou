@@ -58,6 +58,7 @@ It's too late to jump out of the way, you get bitten by the chest. Just like Dar
                     print(f"""
 Funny skeleton!!
 ──────────────────""")
+                    
                     functions.typeSys("What do skelletons order at restaurants?\n\n")
                     functions.typeSys("...\n\n", 0.5)
                     functions.typeSys("Spare ribs\n\n")
@@ -76,14 +77,14 @@ Large door
                         functions.clearConsoleEnt()
                         if functions.hints > 1:
                             print("\ntip: Because you're retarded we are giving a hint. Look in your inventory for something against the heat\n")
-                            print("It's too hot to touch\n\n")
+                            functions.typeSys("It's too hot to touch\n\n")
                             functions.clearConsoleEnt()
                     elif functions.playerStats[0] == 1:
                             functions.clearConsole()
                             print("\033[91mRed's throne room\033[0m")
                             functions.typeSys(f"""
 You get blinded by the light. Your eyes and body get used to the ambience of the room.
-You open the large door and reveal a huge throne room in front of you, it looks like someone has been waiting for you\n\n""", 0.001)
+You open the large door and reveal a huge throne room in front of you, it looks like someone has been waiting for you\n\n""", 0.01)
                             functions.clearConsoleEnt()
                             print(f"""
 \033[91mRed\033[0m

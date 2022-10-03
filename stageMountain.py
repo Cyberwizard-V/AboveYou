@@ -131,16 +131,19 @@ It looks like a love letter?
 
 \n\n""")
                         
-                        secret = input("Press enter to continue? ").lower()
+                        secret = input("Maybe enter something to continue? ").lower()
                         functions.clearConsole()
                         if "future" in secret:   
                                 functions.gameInventory.append(xsecret)
                                 functions.clearConsoleEnt()
                                 print(f'''\n\n\033[93mYou've received the item "{xsecret}" \033[0m\n\n''')
                                 functions.clearConsoleEnt()
-                        else:
+                        else:   
+                                
                                 functions.playSound("music/oofsucky.mp3", 100)
-                                print("bruh you stupid...")
+                                print("bruh?...")
+                                functions.clearConsoleEnt()
+
 
                                 
                 elif b1 == "Menu":
@@ -395,6 +398,7 @@ A huge ravine is in front of you.
 I can see my home from here!                                              
 \n\n""")                                                
                                                         functions.typeSys("A sign is warning you not to take the shortcut.\n\n")
+                                                        functions.clearConsoleEnt()
                                                         warning = input("Would you like to take the shortcut? (Y/N) ").lower()
                                                         if warning == "y":                           
                                                                 functions.clearConsole()
@@ -405,9 +409,36 @@ I can see my home from here!
                                                                 functions.hitpoints -= 1
                                                                 functions.typeSys(f"current \033[91mhp\033[0m: {functions.hitpoints}\n\n")
                                                                 functions.clearConsoleEnt()
+                                                                if functions.hitpoints == 0 :
+                                                                        print(f""""
+
+███████████████████████████
+███████▀▀▀░░░░░░░▀▀▀███████
+████▀░░░░░░░░░░░░░░░░░▀████
+███│░░░░░░░░░░░░░░░░░░░│███
+██▌│░░░░░░░░░░░░░░░░░░░│▐██
+██░└┐░░░░░░░░░░░░░░░░░┌┘░██
+██░░└┐░░░░░░░░░░░░░░░┌┘░░██
+██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██
+██▌░│██████▌░░░▐██████│░▐██
+███░│▐███▀▀░░▄░░▀▀███▌│░███
+██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██
+██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██
+████▄─┘██▌░░░░░░░▐██└─▄████
+█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████
+████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████
+█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████
+███████▄░░░░░░░░░░░▄███████
+██████████▄▄▄▄▄▄▄██████████
+███████████████████████████\n\n""")                                     
+                                                                        functions.playSound("music/oofsucky.mp3", 100)
+                                                                        functions.typeSys("You forgor to check your health\n")
+                                                                        functions.typeSys("You cant continue where you left, but you can restart the whole game\n\n")
+                                                                        input("Press enter to quit the game, there is nothing else")
+                                                                        quit()
                                                                 break
                                                         elif warning == "n":
-                                                                functions.typeSys("\nYou decide not to take the leap of faith.")
+                                                                functions.typeSys("\nYou decide not to take the leap of faith.\n\n")
                                                                 functions.clearConsoleEnt()
                                                                 continue
                                                         else:
