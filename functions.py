@@ -19,19 +19,23 @@ def intro():
    (__)(__)(____/(_____)  \/  (____)   (__) (_____)(______)""", 0.0001)
 
     playerName = input("\n Please input your name : ")
-    if playerName.isalpha():
-        clearConsole()
-        typeSys(f"\nWelcome to the game {playerName}", 0.01)
-        typeSys(f"""\n  
+    while True:
+        if playerName.isalpha():
+            clearConsole()
+            typeSys(f"\nWelcome to the game {playerName}", 0.01)
+            typeSys(f"""\n  
 You suddenly feel a warm feeling in your back and collapse to the floor. 
 Your view is getting hazy and slowly fading away. The only thing you see before the last lights 
 go out is a silhouette of a person running away. A million questions rush into your head. 
 Who is this person? Why me? Why is the floor so floory? Right before you die you swore to find out who killed you. \n\n\n""", 0.001)
-        input("Press enter to continue...")
-        clearConsole()
-    else:
-        print("\nInvalid name; please use characters only, no spaces!\n\n")
-        playerName = input("Please input your name : ")
+            input("Press enter to continue...")
+            clearConsole()
+            break
+        else:
+            clearConsole()
+            print("\nInvalid name, our code only reads characters, no spaces or numbers 💀💀\n\n")
+            playerName = input("\nPlease input your name, but correct this time...: ")
+            continue
 
 
 
@@ -73,6 +77,10 @@ def chooseSys(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Menu", Back="Back" ):
      if z == 1 or z == 2 or z == 3 or z == 4 or z == 5 or z == 6:
         text = Options[(z-1)]
         return text
+     else:
+        clearConsole()
+        print("That is not even an existing number to choose from...")
+        clearConsoleEnt()
     except:
         typeSys("\nNot an option loser\n\n")
         clearConsoleEnt()
@@ -98,6 +106,10 @@ def chooseMaze(Op1, Op2, Op3, Op4, Choices="Choices", Menu="Menu"):
      if z == 1 or z == 2 or z == 3 or z == 4 or z == 5:
         text = Options[(z-1)]
         return text
+     else:
+        clearConsole()
+        print("It was him, that person cant type properly!!!")
+        clearConsoleEnt()
     except:
         typeSys("\nYou are lost aren't you\n\n")
         clearConsoleEnt()
@@ -357,6 +369,10 @@ def tinyChooseSys(Op1, Op2, Choices="Choices", Menu="Menu", Back="Back" ):
      if z == 1 or z == 2 or z == 3 or z == 4:
         text = Options[(z-1)]
         return text
+     else:
+        clearConsole()
+        print("ligma balls, thats an invalid option...")
+        clearConsoleEnt()
     except:
         typeSys("\nNot an option loser\n\n")
         clearConsoleEnt()

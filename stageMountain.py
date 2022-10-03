@@ -451,12 +451,9 @@ I can see my home from here!
 ██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██
 ██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██
 ████▄─┘██▌░░░░░░░▐██└─▄████
-█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████
-████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████
-█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████
-███████▄░░░░░░░░░░░▄███████
-██████████▄▄▄▄▄▄▄██████████
-███████████████████████████\n\n""")                                     
+█████████─┬┬┬┬┬┬┬─█████████
+███████████████████████████
+\n\n""")                                     
                                                                         functions.playSound("music/oofsucky.mp3", 100)
                                                                         functions.typeSys("You forgor to check your health\n")
                                                                         functions.typeSys("You cant continue where you left, but you can restart the whole game\n\n")
