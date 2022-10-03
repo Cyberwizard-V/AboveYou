@@ -34,7 +34,9 @@ You decide and look for a way to get you back to earth and find more information
                 note1 = True
                 functions.clearConsole()
                 functions.typeSys(f"""
-                  NOTE:  
+White's notes
+──────────────────
+
 Day 1
 Yesterday Red asked me to make a deadly beast for him. The purpose of the beast is to kill people.
 Red is getting lazy and putting his workload on me. He just wants to watch the beast killing people for him.
@@ -43,12 +45,15 @@ Day 6
 Red offered me a spot in heaven if i made this beast. It is a very tempting idea...
 
                   """, 0.001)
+                playerStats[5] += 1
                 functions.clearConsoleEnt()
             elif s1 == "note 2":
                 note2 = True
                 functions.clearConsole()
                 functions.typeSys(f"""
-                  NOTE:
+White's notes
+──────────────────
+
 Day 23
 I managed to make the beast. 
 
@@ -67,13 +72,14 @@ Me
 It seems like he got braindead from the vial lol
 
                   """, 0.001)
+                playerStats[5] += 1
                 functions.clearConsoleEnt()
             elif s1 == "big red button":
                 functions.clearConsole()
                 functions.typeSys(f"""
 The big red button is labled "Back to earth"
 
-I quickly press it without thinking...""")
+I quickly press it without thinking...\n""")
 
                 functions.typeSys(f"""
 The doors suddenly open up and shoots me into space.
@@ -94,7 +100,187 @@ The doors suddenly open up and shoots me into space.
 """, 0.001)
                 functions.clearConsoleEnt()
                 
-                if playerStats[4]:
+                if playerStats[4] and "gun" in gameInventory and playerStats[5]:
+                    functions.clearConsole()
+                    functions.typeSys(f"""
+You slowly drift away in space for eternity...
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
+ ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌▐░▌    ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ?ඞඞඞඞ
+                                                                                   
+Credits: ඞJeffrey Yeh, ඞViktor Stam
+
+""", 0.001)
+                    functions.clearConsoleEnt()
+                    functions.typeSys(
+                        "You remember you still had the gun from white's lab...\n\n")
+                    death = input(
+                        "Would you like to use the gun? (Y/N) ").lower()
+                    if death == "y":
+                        functions.clearConsole()
+                        functions.playSound("music/gun.mp3", 1)
+                        functions.clearConsoleEnt()
+                        functions.playSound("music/what.mp3", 1)
+                        print(f"""
+                    A WORKING GUN AND SOUNDS IN SPACE?
+────────────────────────────────────────────────────────────────────────
+        
+        
+                       _   _                                  _    
+                      | | (_)                                | |   
+  __ _ _   _  ___  ___| |_ _  ___  _ __  _ __ ___   __ _ _ __| | __
+ / _` | | | |/ _ \/ __| __| |/ _ \| '_ \| '_ ` _ \ / _` | '__| |/ /
+| (_| | |_| |  __/\__ \ |_| | (_) | | | | | | | | | (_| | |  |   < 
+ \__, |\__,_|\___||___/\__|_|\___/|_| |_|_| |_| |_|\__,_|_|  |_|\_\ 
+    | |                                                            
+    |_|                                                            
+
+
+
+─────────────────────────────────────────────────────────────────────────
+                                HOW??   
+                    \n\n""")
+                        functions.clearConsoleEnt()
+                        functions.typeSys("You shot yourself...\n\n")
+                        functions.clearConsoleEnt()
+                        functions.typeSys(
+                            "You open your eyes and find yourself back in hell...\n\n")
+                        functions.clearConsoleEnt()
+                        print(f"""
+\033[91mRed\033[0m
+──────────────────""")
+                        functions.typeSys(f"""\n
+Welcome back, I've been expecti-.\n\n""")
+                        functions.clearConsoleEnt()
+                        print("haha gun goes brrrrr\n\n")
+                        functions.playSound("music/gun.mp3", 1)
+                        time.sleep(1)
+                        functions.playSound("music/gun.mp3", 1)
+                        time.sleep(1)
+                        functions.playSound("music/gun.mp3", 1)
+                        time.sleep(1)
+                        functions.playSound("music/gun.mp3", 1)
+                        functions.clearConsoleEnt()
+                        functions.typeSys(f"""
+You killed red and take over his role...
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
+ ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌▐░▌    ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ඞඞඞඞ
+                                                                                   
+Credits: ඞJeffrey Yeh, ඞViktor Stam
+Thanks for playing.
+\n\n""", 0.001)
+
+                    if death == "n":
+                        functions.clearConsole()
+                        functions.typeSys(f"""
+You slowly drift away in space for eternity...
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
+ ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌▐░▌    ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ?ඞඞඞඞ
+                                                                                   
+Credits: ඞJeffrey Yeh, ඞViktor Stam
+Thanks for playing.
+\n\n""", 0.001)
+                        input("Press enter to quit...")
+                        break
+            
+                elif playerStats[4] and "gun" in gameInventory:
+                    functions.clearConsole()
+                    functions.typeSys(f"""
+You slowly drift away in space for eternity...
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
+ ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌▐░▌    ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ? ඞඞඞඞ
+                                                                                   
+Credits: ඞJeffrey Yeh, ඞViktor Stam
+
+""", 0.001)         
+                    functions.clearConsoleEnt()
+                    functions.typeSys("You remember you still had the gun from white's lab...\n\n")
+                    death = input("Would you like to use the gun? (Y/N) ").lower()
+                    if death == "y":
+                        functions.clearConsole()
+                        functions.playSound("music/gun.mp3", 1)
+                        functions.clearConsoleEnt()
+                        functions.playSound("music/what.mp3", 1)
+                        print(f"""
+                    A WORKING GUN AND SOUNDS IN SPACE?
+────────────────────────────────────────────────────────────────────────
+        
+        
+                       _   _                                  _    
+                      | | (_)                                | |   
+  __ _ _   _  ___  ___| |_ _  ___  _ __  _ __ ___   __ _ _ __| | __
+ / _` | | | |/ _ \/ __| __| |/ _ \| '_ \| '_ ` _ \ / _` | '__| |/ /
+| (_| | |_| |  __/\__ \ |_| | (_) | | | | | | | | | (_| | |  |   < 
+ \__, |\__,_|\___||___/\__|_|\___/|_| |_|_| |_| |_|\__,_|_|  |_|\_\ 
+    | |                                                            
+    |_|                                                            
+
+
+
+─────────────────────────────────────────────────────────────────────────
+                                HOW??   
+                    \n\n""")
+                        functions.clearConsoleEnt()
+                        functions.typeSys("You shot yourself to end the missery...")
+                    if death == "n":
+                        functions.clearConsole()
+                        functions.typeSys(f"""
+You slowly drift away in space for eternity...
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
+ ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌▐░▌    ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ? ඞඞඞඞ
+                                                                                   
+Credits: ඞJeffrey Yeh, ඞViktor Stam
+Thanks for playing.
+\n\n""", 0.001)
+                        input("Press enter to quit...")
+                        break
+
+                
+                elif playerStats[4]:
                     functions.clearConsole()
                     functions.typeSys(f"""
 You slowly drift away in space for eternity... 
@@ -109,38 +295,19 @@ You slowly drift away in space for eternity...
      ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
      ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
      ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
-      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ඞ
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ? ඞ
                                                                                    
 Credits: ඞJeffrey Yeh, ඞViktor Stam
 
-""", 0.001)         
-                    functions.clearConsoleEnt()
+""", 0.001)
+                    input("Press enter to quit...")
                     break
-                elif playerStats[4] and "gun" in gameInventory:
-                    functions.clearConsole()
-                    functions.typeSys(f"""
-I will shoot myself so i get sent back to hell and i will fuck red up.
 
- ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
-▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
- ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
-     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌▐░▌    ▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
-     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
-      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ඞඞඞඞ
-                                                                                   
-Credits: ඞJeffrey Yeh, ඞViktor Stam
-
-""", 0.001)         
                 else:
                     functions.clearConsole()
                     functions.typeSys(f"""
-I will shoot myself so i get sent back to hell and i will fuck red up.
-
+massive skill issue
+you died accidentally shot yourself into space...
  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
 ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
  ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
@@ -151,14 +318,17 @@ I will shoot myself so i get sent back to hell and i will fuck red up.
      ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
      ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
      ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
-      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ඞඞඞඞ
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ?ඞඞඞඞ
                                                                                    
 Credits: ඞJeffrey Yeh, ඞViktor Stam
 
-""", 0.001) 
+""", 0.001)
+                input("Press enter to quit...")
+                break
+    
 
-                    functions.clearConsoleEnt()
-                    break
+
+            
             elif s1 == "hard socks":
                 functions.clearConsole()
                 print("Pervert")
@@ -168,7 +338,6 @@ Credits: ඞJeffrey Yeh, ඞViktor Stam
             else: 
                 functions.clearConsole()
                 functions.typeSys(f"""
-I will shoot myself so i get sent back to hell and i will fuck red up.
 
  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
 ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
@@ -180,10 +349,10 @@ I will shoot myself so i get sent back to hell and i will fuck red up.
      ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
      ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
      ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
-      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ඞඞඞඞ
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ?ඞඞඞඞ
                                                                                    
 Credits: ඞJeffrey Yeh, ඞViktor Stam
 
 """, 0.001)
-                functions.clearConsoleEnt()
+                input("Press enter to quit...")
                 break

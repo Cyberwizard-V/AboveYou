@@ -92,7 +92,12 @@ A song starts playinig...\n\n""")
                         functions.clearConsole()
 
                         xNote = "notebook"
-                        if gameInventory.count("snow") >= 5:
+                        if xNote in gameInventory:
+                                functions.clearConsole()
+                                print(f"""Thanks for finding me \033[96msnow!\033[0m """)
+                                print(f"""Don't read the \033[96mnotebook\033[0m or not? """)
+                                functions.clearConsoleEnt()
+                        elif gameInventory.count("snow") >= 5:
                                 print(f"""Thanks for finding me \033[96msnow!\033[0m """)
                                 count = 0
                                 while count < 5:
@@ -102,20 +107,18 @@ A song starts playinig...\n\n""")
                                 functions.clearConsoleEnt()
                                 print(f'''\n\n\033[93mYou've received the item "{xNote}" \033[0m\n\n''')
                                 functions.clearConsoleEnt()
-                        elif xNote in gameInventory:
-                                print(f"""Thanks for finding me \033[96msnow!\033[0m """)
-                                print(f"""Please read the \033[96mnotebook\033[0m ;)""")
                         else:
                                 print(f"""
 Melting snowman
 ──────────────────""")
                                 functions.typeSys(f"""
-        I am running out of time.. please find some snow for me...
+I am running out of time.. please find some snow for me...
         \n\n""")
-                                print(f""" Quest: Find \033[96m({gameInventory.count("snow")}/5)\033[0m snow for the snowman """)
+                                print(f""" 
+Please find \033[96m({gameInventory.count("snow")}/5)\033[0m snow for me """)
 
 
-                        functions.clearConsoleEnt()
+                                functions.clearConsoleEnt()
                 elif b1 == "tree trunk":                               
                         functions.clearConsole()
                         print(f"""
@@ -195,7 +198,10 @@ The typical looking at a lab on a mountain cutscene...\n\n
                                                         functions.typeSys(f"""beep boop. Welcome back professor beep boop\n\n""")
                                                         functions.clearConsoleEnt()
                                                 elif xsecret not in gameInventory:
-                                                        password = input("beep boop. Please enter the password. Beep boop: ").lower()
+                                                        print(f"""
+access control system
+────────────────────────""")
+                                                        password = input("beep boop. Please enter the password. Beep boop: \n").lower()
                                                         if password == "jazz":
                                                                 functions.clearConsole()
                                                                 functions.typeSys(f"""beep boop. Welcome back professor. beep boop\n\n""")
@@ -230,31 +236,45 @@ Strange vial
                                                                         functions.typeSys(f"""\n\033[93mYou have obtained a Item {functions.gameInventory[functions.gameInventory.index(l1)]}\n\n\033[0m""", 0.01)
                                                                         functions.clearConsoleEnt()
                                                         elif l1 == "flight manual":
-                                                                functions.clearConsole()
-                                                                print(f"""
+                                                                optionsM[2] += 1
+                                                                if optionsM[2] > 1:
+                                                                        functions.clearConsole()
+                                                                        functions.typeSys("\n\nIm already a space pilot and engineer and astronaut...\n\n")
+                                                                        functions.clearConsoleEnt()
+                                                                else:
+                                                                        functions.clearConsole()
+                                                                        print(f"""
 Flight manual
 ──────────────────""")
-                                                                image = DrawImage.from_file("images/flightmanual1.png", (40, 20))
-                                                                image.draw_image()
-                                                                print("cool rocket it works")
-                                                                functions.clearConsoleEnt()
-                                                                image = DrawImage.from_file("images/flightmanual2.png", (40, 20))
-                                                                image.draw_image()
-                                                                print("To start the rocket i need to press this button...")
-                                                                functions.clearConsoleEnt()
-                                                                image = DrawImage.from_file("images/flightmanual3.png", (40, 20))
-                                                                print("To open the door it is that button...")
-                                                                image.draw_image()
-                                                                functions.clearConsoleEnt()
-                                                                image = DrawImage.from_file("images/flightmanual4.png", (40, 20))
-                                                                print("cool, I believe I know how a rocket works now ")
-                                                                image.draw_image()
-                                                                functions.clearConsoleEnt()
-                                                                functions.playerStats[3] += 1
+                                                                        image = DrawImage.from_file(
+                                                                                "images/flightmanual1.png", (40, 20))
+                                                                        image.draw_image()
+                                                                        print(
+                                                                                "cool rocket it works")
+                                                                        functions.clearConsoleEnt()
+                                                                        image = DrawImage.from_file(
+                                                                                "images/flightmanual2.png", (40, 20))
+                                                                        image.draw_image()
+                                                                        print(
+                                                                                "To start the rocket i need to press this button...")
+                                                                        functions.clearConsoleEnt()
+                                                                        image = DrawImage.from_file(
+                                                                                "images/flightmanual3.png", (40, 20))
+                                                                        print(
+                                                                                "To open the door it is that button...")
+                                                                        image.draw_image()
+                                                                        functions.clearConsoleEnt()
+                                                                        image = DrawImage.from_file(
+                                                                                "images/flightmanual4.png", (40, 20))
+                                                                        print(
+                                                                                "cool, I believe I know how a rocket works now ")
+                                                                        image.draw_image()
+                                                                        functions.clearConsoleEnt()
+                                                                        functions.playerStats[3] += 1
                                                         elif l1 == "gun":
                                                                 functions.clearConsole()
                                                                 if xGun in gameInventory:
-                                                                        print(f'''\n\n\033[93mYou've already received the item "{xGun}", shoot yourself \033[0m\n\n''')
+                                                                        print(f'''\n\nYou've already received the item "{xGun}", go and shoot yourself or something...\n\n''')
                                                                         functions.clearConsoleEnt()
 
                                                                 else:
@@ -263,7 +283,7 @@ Gun.
 ──────────────────""")   
                                                                         functions.gameInventory.append(xGun)
                                                                         functions.clearConsoleEnt()
-                                                                        print(f'''\n\n\033[93mbang bang is a  "{xGun}" you received \033[0m\n\n''')
+                                                                        functions.typeSys(f'''\n\n\033[93mbang bang is a  "{xGun}" you received \033[0m\n\n''')
                                                                         functions.clearConsoleEnt()
                                                         elif l1 == "Menu":
                                                                 functions.clearConsole()
@@ -275,7 +295,11 @@ Gun.
                                                         elif l1 == "rocketship":
                                                                 functions.clearConsole()
                                                                 if functions.playerStats[3] != 1:
-                                                                        print(f"""Please read the manual first !""")
+                                                                        functions.clearConsole()
+                                                                        functions.typeSys(f"""
+I dont know how to open the door to enter...
+I should read the manual first to figure out how it works.""")
+                                                                        functions.clearConsoleEnt()
                                                                 else:
                                                                         while rocketship:
                                                                                 functions.typeSys(f"""\n
@@ -289,6 +313,7 @@ You try to press all the buttons of the ship to open the door and catch him for 
 You accidentally launch the spaceship while trying to open the door.
 Even after reading the manual you didnt know which buttons to press.
 skill issue ...\n\n""", 0.05)
+                                                                                
                                                                                 break
                                                                         for i in range(3,0, -1):
                                                                                 print(f"{i} seconds until launch", end="\r", flush=True)
@@ -296,6 +321,7 @@ skill issue ...\n\n""", 0.05)
                                                                                 image.draw_image()
                                                                                 time.sleep(1)
                                                                                 if i == 1:
+                                                                                        functions.playSound("music/space.mp3", 1)
                                                                                         print(f"""
                                                                                                                                                                                                                                                                                 
             ░░                                                                  ░░      
@@ -410,7 +436,7 @@ I can see my home from here!
                                                                 functions.typeSys(f"current \033[91mhp\033[0m: {functions.hitpoints}\n\n")
                                                                 functions.clearConsoleEnt()
                                                                 if functions.hitpoints == 0 :
-                                                                        print(f""""
+                                                                        print(f"""
 
 ███████████████████████████
 ███████▀▀▀░░░░░░░▀▀▀███████

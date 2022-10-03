@@ -6,7 +6,7 @@ from pygame import mixer
 
 
 gameInventory = []
-playerStats = [0, 0, 0, 0, 0]
+playerStats = [0, 0, 0, 0, 0, 0]
 hitpoints = 3
 hints = 0
 
@@ -231,7 +231,7 @@ Strange vial
                             clearConsole()
                             gameInventory.remove("strange vial")
                             playerStats[4] += 1
-                            typeSys("\n\nYou feel the power of breathing. You can breathe oxygen?\n")
+                            typeSys("\n\nYou feel the power of breathing. You can breathe oxygen?\n\n")
                             typeSys("\033[93m'strange vial' has been removed from your inventory\033[0m\n\n")
                             clearConsoleEnt()
                         elif inputInventory == "n":
@@ -263,6 +263,8 @@ Status effects
                 print("Pilot")
             if playerStats[4] == 1:
                 print("Oxygen breather")
+            if playerStats[5] >= 1:
+                print("Galaxy brain")
 
 
             clearConsoleEnt()
