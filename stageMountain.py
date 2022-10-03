@@ -464,6 +464,7 @@ I can see my home from here!
                                                                         quit()
                                                                 break
                                                         elif warning == "n":
+                                                                functions.clearConsole()
                                                                 functions.typeSys("\nYou decide not to take the leap of faith.\n\n")
                                                                 functions.clearConsoleEnt()
                                                                 continue

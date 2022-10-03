@@ -209,6 +209,8 @@ Water
                                     warning = input("Would you still like to proceed to enter the dangerous waters? (Y/N) ").lower()
                                     if warning == "n":
                                         functions.clearConsole()
+                                        print("You slowly walk backwards...")
+                                        functions.clearConsoleEnt()
                                         continue
                 
                                     elif warning == "y":

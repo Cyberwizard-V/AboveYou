@@ -218,6 +218,9 @@ Jar of milk
                             typeSys("\033[93mjar of milk has been removed from your inventory\033[0m\n\n")
                             clearConsoleEnt()
                         elif inputInventory == "n":
+                            clearConsole()
+                            print("You spit the milk back in the container.")
+                            clearConsoleEnt()
                             continue
 
                     elif inventoryCheck == "strange vial":
@@ -235,6 +238,9 @@ Strange vial
                             typeSys("\033[93m'strange vial' has been removed from your inventory\033[0m\n\n")
                             clearConsoleEnt()
                         elif inputInventory == "n":
+                            clearConsole()
+                            print("You vial flip the vial back in your inventory")
+                            clearConsoleEnt()
                             continue
 
                         else:
