@@ -210,7 +210,7 @@ You slowly drift away in space for eternity...
 Credits: ඞJeffrey Yeh, ඞViktor Stam
 Thanks for playing.
 \n\n""", 0.001)
-                        input("Press enter to quit...")
+                        input("Press enter to stop the song and quit...")
                         break
             
                 elif playerStats[4] and "gun" in gameInventory:
@@ -261,7 +261,27 @@ Credits: ඞJeffrey Yeh, ඞViktor Stam
                                 HOW??   
                     \n\n""")
                         functions.clearConsoleEnt()
-                        functions.typeSys("You shot yourself to end the missery...")
+                        functions.typeSys("You shot yourself to end the missery...\n\n")
+                        functions.clearConsoleEnt()
+                        functions.playSound("music/animal.mp3", 1)
+                        functions.typeSys(f"""
+You chose a quick ending. Your lifeless body floats around for eternity...
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌
+ ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌▐░▌    ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
+     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ? ඞඞඞඞ
+
+Credits: ඞJeffrey Yeh, ඞViktor Stam
+Thanks for playing.
+\n\n""", 0.001)         
+                        input("Press enter to stop the song and quit")
                     if death == "n":
                         functions.clearConsole()
                         functions.playSound("music/animal.mp3", 1)
@@ -282,7 +302,7 @@ You slowly drift away in space for eternity...
 Credits: ඞJeffrey Yeh, ඞViktor Stam
 Thanks for playing.
 \n\n""", 0.001)
-                        input("Press enter to quit...")
+                        input("Press enter to stop the song and quit...")
                         break
 
                 
@@ -307,7 +327,7 @@ You slowly drift away in space for eternity...
 Credits: ඞJeffrey Yeh, ඞViktor Stam
 
 """, 0.001)
-                    input("Press enter to quit...")
+                    input("Press enter to stop the song and quit...")
                     break
 
                 else:
@@ -331,7 +351,7 @@ you died accidentally shot yourself into space...
 Credits: ඞJeffrey Yeh, ඞViktor Stam
 
 """, 0.001)
-                input("Press enter to quit...")
+                input("Press enter to stop the song and quit...")
                 break
     
 
