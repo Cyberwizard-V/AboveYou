@@ -156,7 +156,7 @@ It looks like a love letter?
                         functions.typeSys(f"""
 You slowly make your way up the stairs.\n\n""")
                         functions.clearConsoleEnt()
-                        
+                        mountainPass = True
                         while mountainPass:
                                 functions.typeSys("I should try and enter the lab for more clues about White and who killed me.")
                                 p1 = functions.chooseSys("deranged scientist", "butterfly", "white's lab", "more stairs", "Mountain pass")
@@ -199,12 +199,12 @@ The typical looking at a lab on a mountain cutscene...\n\n
                                                                 functions.clearConsoleEnt()
                                                         else: 
                                                                 functions.clearConsole()
-                                                                functions.tinyChooseSys("Incorrect password!")
+                                                                functions.typeSys("Incorrect password!")
                                                                 functions.clearConsoleEnt()
                                                                 break
                                                 else: 
                                                         functions.clearConsole()
-                                                        functions.tinyChooseSys("Incorrect password!")
+                                                        functions.typeSys("Incorrect password!")
                                                         functions.clearConsoleEnt()
                                                         break
                                                         
@@ -345,6 +345,7 @@ skill issue ...\n\n""", 0.05)
                                         functions.typeSys(f"""
 Another stairs, but this one is even bigger...\n\n""")
                                         functions.clearConsoleEnt()
+                                        mountainTop = True
                                         while mountainTop:
                                                 t1 = functions.chooseSys("snow", "cones", "clouds", "ravine", "Mountain top")
                                                 if t1 == "snow":                                                               
