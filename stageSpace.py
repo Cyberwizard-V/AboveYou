@@ -102,6 +102,7 @@ The doors suddenly open up and shoots me into space.
                 
                 if playerStats[4] and "gun" in gameInventory and playerStats[5]:
                     functions.clearConsole()
+                    functions.playSound("music/animal.mp3", 1)
                     functions.typeSys(f"""
 You slowly drift away in space for eternity...
  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
@@ -169,7 +170,9 @@ Welcome back, I've been expecti-.\n\n""")
                         time.sleep(1)
                         functions.playSound("music/gun.mp3", 1)
                         functions.clearConsoleEnt()
+                        functions.playSound("music/animal.mp3", 1)
                         functions.typeSys(f"""
+                        
 You killed red and take over his role...
  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
 ▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
@@ -189,6 +192,7 @@ Thanks for playing.
 
                     if death == "n":
                         functions.clearConsole()
+                        functions.playSound("music/animal.mp3", 1)
                         functions.typeSys(f"""
 You slowly drift away in space for eternity...
  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
@@ -211,6 +215,7 @@ Thanks for playing.
             
                 elif playerStats[4] and "gun" in gameInventory:
                     functions.clearConsole()
+                    functions.playSound("music/animal.mp3", 1)
                     functions.typeSys(f"""
 You slowly drift away in space for eternity...
  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
@@ -259,6 +264,7 @@ Credits: ඞJeffrey Yeh, ඞViktor Stam
                         functions.typeSys("You shot yourself to end the missery...")
                     if death == "n":
                         functions.clearConsole()
+                        functions.playSound("music/animal.mp3", 1)
                         functions.typeSys(f"""
 You slowly drift away in space for eternity...
  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
@@ -282,6 +288,7 @@ Thanks for playing.
                 
                 elif playerStats[4]:
                     functions.clearConsole()
+                    functions.playSound("music/animal.mp3", 1)
                     functions.typeSys(f"""
 You slowly drift away in space for eternity... 
 
@@ -305,6 +312,7 @@ Credits: ඞJeffrey Yeh, ඞViktor Stam
 
                 else:
                     functions.clearConsole()
+                    functions.playSound("music/animal.mp3", 1)
                     functions.typeSys(f"""
 massive skill issue
 you died accidentally shot yourself into space...
@@ -337,22 +345,4 @@ Credits: ඞJeffrey Yeh, ඞViktor Stam
                 functions.menu("Inventory", "Status effects", "Map")
             else: 
                 functions.clearConsole()
-                functions.typeSys(f"""
-
- ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄  
-▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░▌ 
- ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌
-     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌▐░▌    ▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀      ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░▌       ▐░▌▐░▌               ▐░▌          ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
-     ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄      ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
-     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░▌ 
-      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀  ?ඞඞඞඞ
-                                                                                   
-Credits: ඞJeffrey Yeh, ඞViktor Stam
-
-""", 0.001)
-                input("Press enter to quit...")
-                break
+                print("????")
