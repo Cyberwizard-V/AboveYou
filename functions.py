@@ -296,6 +296,7 @@ syke there are no maps in the game...\n\n""")
             clearConsole()
             break
         else:
+            clearConsole()
             typeSys("\nNot an option loser\n\n")
             clearConsoleEnt()
 
@@ -374,6 +375,7 @@ def tinyChooseSys(Op1, Op2, Choices="Choices", Menu="Menu", Back="Back" ):
         print("ligma balls, thats an invalid option...")
         clearConsoleEnt()
     except:
+        clearConsole()
         typeSys("\nNot an option loser\n\n")
         clearConsoleEnt()
     
