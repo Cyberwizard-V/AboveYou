@@ -37,7 +37,7 @@ command to run if program contains helper info
 ## Version History 🧙
 
 * 0.1
-    * Working on initial release.
+    * initial release
 
 
 
