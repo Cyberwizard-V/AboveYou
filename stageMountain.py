@@ -246,9 +246,9 @@ Strange vial
                                                                         print(f"""
 Flight manual
 ──────────────────""")
-                                                                        image = DrawImage.from_file(
-                                                                                "images/flightmanual1.png", (40, 20))
+                                                                        image = DrawImage.from_file("images/flightmanual1.png", (40, 20))
                                                                         image.draw_image()
+                                                                        
                                                                         print(
                                                                                 "cool rocket it works")
                                                                         functions.clearConsoleEnt()
